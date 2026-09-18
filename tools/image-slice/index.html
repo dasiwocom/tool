@@ -14,7 +14,7 @@
 }catch(e){}})();
 setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
 </script>
-<title>Image Compress · ToolBox</title>
+<title>Image Slice · ToolBox</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
 <script src="../../core.js?v=20260918j"></script>
 <link rel="stylesheet" href="../../styles.css?v=20260918j">
@@ -31,7 +31,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             <a href="../../index.html" data-i18n="home">Home</a>
             <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
             <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
         </nav>
         <div class="header-actions">
             <button id="langToggle" class="icon-btn">
@@ -48,37 +48,34 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 </header>
 
 <main class="tool-page">
-    <div class="tool-head" data-tool-key="imageCompress">
-        <h1>Image Compress</h1>
-        <p data-i18n="imageCompressDesc">Shrink image file size without quality loss</p>
+    <div class="tool-head" data-tool-key="imageSlice">
+        <h1>Image Slice</h1>
+        <p data-i18n="imageSliceDesc">Cut one image into a grid of tiles</p>
     </div>
 
     <div class="section">
         <div class="section-label" data-i18n="chooseImage">Choose an image</div>
         <input type="file" id="file" accept="image/*" class="code" style="font-size:16px;">
-        <p class="hint" data-i18n="dropImage">or drag &amp; drop it here</p>
 
-        <div class="range-row">
-            <span data-i18n="quality">Quality</span>
-            <input type="range" id="quality" min="10" max="100" value="80" class="code">
-            <span class="value" id="qualityVal">80%</span>
+        <div class="range-row" style="margin-top:18px;">
+            <label class="range-row" style="flex:1;">
+                <span data-i18n="sliceCols">Columns</span>
+                <input type="number" id="cols" min="2" max="16" value="2" class="code" style="width:120px; text-align:center;">
+            </label>
+            <label class="range-row" style="flex:1;">
+                <span data-i18n="sliceRows">Rows</span>
+                <input type="number" id="rows" min="2" max="16" value="2" class="code" style="width:120px; text-align:center;">
+            </label>
         </div>
 
         <div class="btn-row">
-            <button class="btn btn-primary" data-i18n="compressBtn" id="compress">Compress</button>
+            <button class="btn btn-primary" id="sliceBtn" data-i18n="sliceBtn">Slice</button>
         </div>
     </div>
 
-    <div class="section" id="result" hidden>
+    <div class="section">
         <div class="section-label" data-i18n="toolResult">Result</div>
-        <div class="stat-row" style="display:flex; gap:24px; flex-wrap:wrap; margin-bottom:16px;">
-            <span><span class="stat-value" id="sizeOriginal">–</span> <span class="hint" data-i18n="originalSize">Original</span></span>
-            <span><span class="stat-value" id="sizeNew">–</span> <span class="hint" data-i18n="newSize">Compressed</span></span>
-            <span><span class="stat-value" id="sizeSaved">–</span> <span class="hint" data-i18n="savedPercent">saved</span></span>
-        </div>
-        <div class="btn-row">
-            <a class="btn btn-primary" id="download" download="compressed.png" data-i18n="download">Download</a>
-        </div>
+        <div class="grid" id="tileGrid" style="grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:14px;"></div>
     </div>
 </main>
 
@@ -88,7 +85,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             <a href="../../index.html" data-i18n="home">Home</a>
             <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
             <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
         </div>
         <div class="footer-brand"><span class="footer-mark">T</span> <span data-i18n="siteName">ToolBox</span></div>
         <p class="footer-note" data-i18n="footer">All processing happens in your browser</p>
@@ -112,7 +109,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             <a href="../../index.html" data-i18n="home">Home</a>
             <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
             <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
         </nav>
         <div class="drawer-foot" data-i18n="footer"></div>
     </div>

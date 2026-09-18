@@ -14,7 +14,7 @@
 }catch(e){}})();
 setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
 </script>
-<title>Image Compress · ToolBox</title>
+<title>Image Crop · ToolBox</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
 <script src="../../core.js?v=20260918j"></script>
 <link rel="stylesheet" href="../../styles.css?v=20260918j">
@@ -31,7 +31,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             <a href="../../index.html" data-i18n="home">Home</a>
             <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
             <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
         </nav>
         <div class="header-actions">
             <button id="langToggle" class="icon-btn">
@@ -48,36 +48,40 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 </header>
 
 <main class="tool-page">
-    <div class="tool-head" data-tool-key="imageCompress">
-        <h1>Image Compress</h1>
-        <p data-i18n="imageCompressDesc">Shrink image file size without quality loss</p>
+    <div class="tool-head" data-tool-key="imageCrop">
+        <h1>Image Crop</h1>
+        <p data-i18n="imageCropDesc">Crop a region out of an image</p>
     </div>
 
     <div class="section">
         <div class="section-label" data-i18n="chooseImage">Choose an image</div>
         <input type="file" id="file" accept="image/*" class="code" style="font-size:16px;">
-        <p class="hint" data-i18n="dropImage">or drag &amp; drop it here</p>
+    </div>
 
-        <div class="range-row">
-            <span data-i18n="quality">Quality</span>
-            <input type="range" id="quality" min="10" max="100" value="80" class="code">
-            <span class="value" id="qualityVal">80%</span>
+    <div class="section" id="stageWrap" hidden>
+        <div class="section-label" data-i18n="cropHint">Drag on the image to select an area</div>
+        <div id="stage" style="position:relative; display:inline-block; max-width:100%; user-select:none; cursor:crosshair;">
+            <img id="stageImg" style="display:block; max-width:100%; height:auto; border-radius:10px;">
+            <div id="cropBox" style="position:absolute; border:2px solid var(--accent); background:rgba(0,113,227,.15); display:none; pointer-events:none;"></div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; margin-top:16px; max-width:480px;">
+            <label><span class="hint">X</span><input id="cropX" type="number" class="code" style="width:100%;"></label>
+            <label><span class="hint">Y</span><input id="cropY" type="number" class="code" style="width:100%;"></label>
+            <label><span class="hint">W</span><input id="cropW" type="number" class="code" style="width:100%;"></label>
+            <label><span class="hint">H</span><input id="cropH" type="number" class="code" style="width:100%;"></label>
         </div>
 
         <div class="btn-row">
-            <button class="btn btn-primary" data-i18n="compressBtn" id="compress">Compress</button>
+            <button class="btn btn-primary" id="cropBtn" data-i18n="cropBtn">Crop</button>
         </div>
     </div>
 
-    <div class="section" id="result" hidden>
+    <div class="section" id="cropResult" hidden>
         <div class="section-label" data-i18n="toolResult">Result</div>
-        <div class="stat-row" style="display:flex; gap:24px; flex-wrap:wrap; margin-bottom:16px;">
-            <span><span class="stat-value" id="sizeOriginal">–</span> <span class="hint" data-i18n="originalSize">Original</span></span>
-            <span><span class="stat-value" id="sizeNew">–</span> <span class="hint" data-i18n="newSize">Compressed</span></span>
-            <span><span class="stat-value" id="sizeSaved">–</span> <span class="hint" data-i18n="savedPercent">saved</span></span>
-        </div>
+        <img id="preview" style="max-width:100%; border-radius:10px; margin-bottom:16px;">
         <div class="btn-row">
-            <a class="btn btn-primary" id="download" download="compressed.png" data-i18n="download">Download</a>
+            <a class="btn btn-primary" id="download" download="cropped.png" data-i18n="download">Download</a>
         </div>
     </div>
 </main>
@@ -88,7 +92,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             <a href="../../index.html" data-i18n="home">Home</a>
             <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
             <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
         </div>
         <div class="footer-brand"><span class="footer-mark">T</span> <span data-i18n="siteName">ToolBox</span></div>
         <p class="footer-note" data-i18n="footer">All processing happens in your browser</p>
@@ -112,7 +116,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             <a href="../../index.html" data-i18n="home">Home</a>
             <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
             <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
         </nav>
         <div class="drawer-foot" data-i18n="footer"></div>
     </div>

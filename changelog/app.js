@@ -1,9 +1,34 @@
 /* Timeline — chronological (latest first) */
 const VERSIONS = [
     {
-        v: "1.3",
+        v: "1.4",
         date: "2026-09-18",
         latest: true,
+        title: {
+            en: "Contact page · new image tools · all-format convert",
+            zh: "联系页 · 图片新工具 · 全能转格式"
+        },
+        items: {
+            en: [
+                "New Contact page and a Contact link in the top nav, drawer and footer",
+                "New tools: Image Slice (cut an image into a grid) and Image Crop (drag to select a region)",
+                "Image Convert gained an All-formats option that outputs PNG, JPEG and WebP at once",
+                "Download page now lists Android alongside Windows, macOS and Linux",
+                "Fixed first-frame language flash and mobile horizontal drift"
+            ],
+            zh: [
+                "新增「联系我们」页，顶部导航 / 抽屉 / 页脚新增「联系我们」入口",
+                "新增工具：图片切割（把一张图切成网格）与图片裁剪（拖拽选择区域）",
+                "「图片转格式」新增「全能」选项，可一次同时输出 PNG、JPEG、WebP",
+                "下载页在 Windows / macOS / Linux 之外新增 Android 平台",
+                "修复首帧语言闪屏与移动端横向漂移"
+            ]
+        }
+    },
+    {
+        v: "1.3",
+        date: "2026-09-18",
+        latest: false,
         title: {
             en: "New tools · Download page · mobile polish",
             zh: "新工具 · 下载页 · 移动端打磨"
