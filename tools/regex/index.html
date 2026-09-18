@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){try{
+  var t=localStorage.getItem("toolbox-theme");
+  var l=localStorage.getItem("toolbox-lang");
+  var d=document.documentElement;
+  if(t==="dark"){d.setAttribute("data-theme","dark")}
+  if(l==="en"||l==="zh"){d.setAttribute("lang",l)}
+}catch(e){}})();
+</script>
+<title>Regex Tester · ToolBox</title>
+<link rel="stylesheet" href="../../styles.css?v=20260918f">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="../../index.html">
+            <span class="brand-mark">T</span>
+            <span data-i18n="siteName">ToolBox</span>
+        </a>
+        <nav class="site-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+        </nav>
+        <div class="header-actions">
+
+            <button id="langToggle" class="icon-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+                <span class="btn-label">English</span>
+            </button>
+            <button id="themeToggle" class="icon-btn"><span id="themeIcon"></span></button>
+                    <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" data-i18n-title="menu" title="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                <span class="btn-label"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="tool-page">
+    <div class="tool-head" data-tool-key="regex">
+        <h1>Regex Tester</h1>
+        <p>Live pattern matching with highlight</p>
+    </div>
+
+    <div class="section">
+        <div class="section-label"><span data-i18n="pattern">Pattern</span></div>
+        <input type="text" id="pattern" class="code" placeholder="[A-Za-z]+" spellcheck="false" value="\b\w+@\w+\.\w+">
+    </div>
+
+    <div class="section">
+        <div class="section-label"><span data-i18n="flags">Flags</span></div>
+        <div class="flag-row">
+            <label><input type="checkbox" id="f-g" checked>g</label>
+            <label><input type="checkbox" id="f-i">i</label>
+            <label><input type="checkbox" id="f-m">m</label>
+            <label><input type="checkbox" id="f-s">s</label>
+            <label><input type="checkbox" id="f-u">u</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label"><span data-i18n="testString">Test string</span></div>
+        <textarea id="text" rows="6" spellcheck="false" placeholder="hello"></textarea>
+    </div>
+
+    <div class="section">
+        <div class="section-label"><span data-i18n="output">Output</span></div>
+        <div class="regex-box" id="view"></div>
+        <div class="field-note" id="info" style="margin-top:10px;"></div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+        </div>
+        <div class="footer-brand"><span class="footer-mark">T</span> <span data-i18n="siteName">ToolBox</span></div>
+        <p class="footer-note" data-i18n="footer">All processing happens in your browser</p>
+        <p class="footer-note">© 2026 ToolBox</p>
+    </div>
+</footer>
+<div class="toast" id="toast"></div>
+<div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="drawer-head">
+            <a class="brand" href="../../index.html">
+                <span class="brand-mark">T</span>
+                <span data-i18n="siteName">ToolBox</span>
+            </a>
+            <button class="drawer-close" data-close-drawer>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="../../index.html" class="active" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+        </nav>
+        <div class="drawer-foot" data-i18n="footer"></div>
+    </div>
+</div>
+
+<script src="../../core.js?v=20260918f"></script>
+<script src="app.js?v=20260918f"></script>
+</body>
+</html>
