@@ -282,52 +282,60 @@ function fallbackCopy(text, done) {
     done();
 }
 
-/* ---------- Init ---------- */
-applyTheme();
-applyLang();
-
-document.getElementById("themeToggle").addEventListener("click", () => {
-    applyTheme(theme === "light" ? "dark" : "light");
-});
-
-document.getElementById("langToggle").addEventListener("click", () => {
-    applyLang(lang === "zh" ? "en" : "zh");
-});
-
-/* ---------- Mobile drawer menu ---------- */
-const menuToggle = document.getElementById("menuToggle");
-const drawer = document.getElementById("drawer");
-if (menuToggle && drawer) {
-    const openDrawer = () => {
-        drawer.classList.add("open");
-        drawer.setAttribute("aria-hidden", "false");
-        menuToggle.setAttribute("aria-expanded", "true");
-        document.body.style.overflow = "hidden";
-    };
-    const closeDrawer = () => {
-        drawer.classList.remove("open");
-        drawer.setAttribute("aria-hidden", "true");
-        menuToggle.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-    };
-    menuToggle.addEventListener("click", () => {
-        drawer.classList.contains("open") ? closeDrawer() : openDrawer();
+/* ---------- Init (core.js may load in <head>; boot after DOM ready) ---------- */
+function boot() {
+    applyTheme();
+    applyLang();
+    
+    document.getElementById("themeToggle").addEventListener("click", () => {
+        applyTheme(theme === "light" ? "dark" : "light");
     });
-    drawer.querySelectorAll("[data-close-drawer]").forEach(el => el.addEventListener("click", closeDrawer));
-    document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 640) closeDrawer();
+    
+    document.getElementById("langToggle").addEventListener("click", () => {
+        applyLang(lang === "zh" ? "en" : "zh");
     });
+    
+    /* ---------- Mobile drawer menu ---------- */
+    const menuToggle = document.getElementById("menuToggle");
+    const drawer = document.getElementById("drawer");
+    if (menuToggle && drawer) {
+        const openDrawer = () => {
+            drawer.classList.add("open");
+            drawer.setAttribute("aria-hidden", "false");
+            menuToggle.setAttribute("aria-expanded", "true");
+            document.body.style.overflow = "hidden";
+        };
+        const closeDrawer = () => {
+            drawer.classList.remove("open");
+            drawer.setAttribute("aria-hidden", "true");
+            menuToggle.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+        };
+        menuToggle.addEventListener("click", () => {
+            drawer.classList.contains("open") ? closeDrawer() : openDrawer();
+        });
+        drawer.querySelectorAll("[data-close-drawer]").forEach(el => el.addEventListener("click", closeDrawer));
+        document.addEventListener("keydown", e => { if (e.key === "Escape") closeDrawer(); });
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 640) closeDrawer();
+        });
+    }
+    
+    /* ---------- Build badge (permanent version marker) ---------- */
+    (function () {
+        const cs = getComputedStyle(document.documentElement);
+        const build = (cs.getPropertyValue("--build") || "").replace(/["']/g, "").trim();
+        const badge = (cs.getPropertyValue("--badge-text") || "").replace(/["']/g, "").trim() || build;
+        const el = document.createElement("div");
+        el.className = "build-badge";
+        if (!build) el.classList.add("stale");
+        el.textContent = build ? badge : "STALE — reload without cache";
+        document.body.appendChild(el);
+    })();
 }
 
-/* ---------- Build badge (permanent version marker) ---------- */
-(function () {
-    const cs = getComputedStyle(document.documentElement);
-    const build = (cs.getPropertyValue("--build") || "").replace(/["']/g, "").trim();
-    const badge = (cs.getPropertyValue("--badge-text") || "").replace(/["']/g, "").trim() || build;
-    const el = document.createElement("div");
-    el.className = "build-badge";
-    if (!build) el.classList.add("stale");
-    el.textContent = build ? badge : "STALE — reload without cache";
-    document.body.appendChild(el);
-})();
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", boot);
+} else {
+    boot();
+}

@@ -12,8 +12,8 @@
     --radius-lg: 22px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --theme-dur: 0s;      /* theme switch is insta-snapshot: fully in-frame */
-    --build: "20260918f"; /* visible build marker — bump on every deploy */
-    --badge-text: "v20260918f"; /* keep in sync with --build */
+    --build: "20260918g"; /* visible build marker — bump on every deploy */
+    --badge-text: "v20260918g"; /* keep in sync with --build */
 }
 
 [data-theme="light"] {
@@ -89,14 +89,16 @@
 
 [data-theme] body { transition: background-color var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease); }
 
-html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 body {
     font-family: var(--font);
     font-size: 15px;
+    font-weight: 400;
     line-height: 1.5;
     color: var(--text);
     background: var(--bg);
+    overflow-x: hidden;
     transition: background-color var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease), border-color var(--theme-dur) var(--ease);
     min-height: 100vh;
 }
@@ -441,6 +443,14 @@ textarea.output {
 }
 
 input.output { font-family: var(--mono); font-size: 13px; }
+
+/* Inline helper grid used by some tool pages (e.g. bulk rename) */
+.input-grid input,
+.input-grid select {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
 
 /* Buttons */
 .btn-row {

@@ -13,7 +13,8 @@
 }catch(e){}})();
 </script>
 <title>Timestamp Converter · ToolBox</title>
-<link rel="stylesheet" href="../../styles.css?v=20260918f">
+<script src="../../core.js?v=20260918g"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260918g">
 </head>
 <body>
 
@@ -59,7 +60,7 @@
 
     <div class="section">
         <div class="section-label"><span data-i18n="tsToDate">Timestamp → Date</span><span class="hint">⚡ copy</span></div>
-        <div style="display:flex;gap:10px;align-items:center;">
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
             <input type="number" id="tsInput" class="code" placeholder="1700000000">
             <div class="segmented" id="tsUnit">
                 <button class="active" data-mult="1">s</button>
@@ -71,7 +72,7 @@
 
     <div class="section">
         <div class="section-label" data-i18n="dateToTs">Date → Timestamp</div>
-        <div style="display:flex;gap:10px;align-items:center;">
+        <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
             <input type="datetime-local" id="dtInput" value="">
             <button class="btn btn-secondary" data-i18n="convert" id="dtConvert">Convert</button>
         </div>
@@ -113,7 +114,6 @@
     </div>
 </div>
 
-<script src="../../core.js?v=20260918f"></script>
-<script src="app.js?v=20260918f"></script>
+<script src="app.js?v=20260918g"></script>
 </body>
 </html>
