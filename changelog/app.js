@@ -5,21 +5,21 @@ const VERSIONS = [
         date: "2026-09-18",
         latest: true,
         title: {
-            en: "Contact page · new image tools · all-format convert",
-            zh: "联系页 · 图片新工具 · 全能转格式"
+            en: "Contact page · new image tools · more convert formats",
+            zh: "联系页 · 图片新工具 · 更多转格式"
         },
         items: {
             en: [
                 "New Contact page and a Contact link in the top nav, drawer and footer",
                 "New tools: Image Slice (cut an image into a grid) and Image Crop (drag to select a region)",
-                "Image Convert gained an All-formats option that outputs PNG, JPEG and WebP at once",
+                "Image Convert gained AVIF and BMP targets — five output formats in total",
                 "Download page now lists Android alongside Windows, macOS and Linux",
                 "Fixed first-frame language flash and mobile horizontal drift"
             ],
             zh: [
                 "新增「联系我们」页，顶部导航 / 抽屉 / 页脚新增「联系我们」入口",
                 "新增工具：图片切割（把一张图切成网格）与图片裁剪（拖拽选择区域）",
-                "「图片转格式」新增「全能」选项，可一次同时输出 PNG、JPEG、WebP",
+                "「图片转格式」新增 AVIF / BMP 格式，加上 PNG、JPEG、WebP 共五种",
                 "下载页在 Windows / macOS / Linux 之外新增 Android 平台",
                 "修复首帧语言闪屏与移动端横向漂移"
             ]
