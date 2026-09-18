@@ -94,6 +94,7 @@ html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
     font-family: var(--font);
     font-size: 15px;
+    font-weight: 500;
     line-height: 1.5;
     color: var(--text);
     background: var(--bg);
@@ -356,7 +357,7 @@ button {
 
 .tool-head h1 {
     font-size: clamp(28px, 4.5vw, 40px);
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.02em;
     margin-bottom: 8px;
 }
