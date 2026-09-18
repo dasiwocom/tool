@@ -43,6 +43,13 @@ const I18N = {
     dlComingSoon: { en: "Coming soon", zh: "即将推出" },
     dlNow: { en: "The desktop app is in development. For now, every tool already runs right here in your browser — nothing to install.", zh: "桌面端正在开发中。目前所有工具都可以直接在浏览器里使用，无需安装。" },
 
+    contact: { en: "Contact", zh: "联系我们" },
+    contactTitle: { en: "Contact Us", zh: "联系我们" },
+    contactDesc: { en: "Questions, feedback, or feature ideas", zh: "问题、反馈或功能建议" },
+    emailTitle: { en: "Email", zh: "电子邮件" },
+    contactIntro: { en: "Have a question or a feature idea? Drop us a line.", zh: "有问题或功能想法？给我们发封邮件吧。" },
+    sendEmail: { en: "Send an email", zh: "发送邮件" },
+
     /* ---------- Tool names & descriptions ---------- */
     json: { en: "JSON Formatter", zh: "JSON 格式化" },
     jsonDesc: { en: "Prettify, minify, and validate JSON", zh: "格式化、压缩与校验 JSON 数据" },
