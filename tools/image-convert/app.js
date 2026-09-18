@@ -8,6 +8,7 @@ const convertBtn = document.getElementById("convert");
 const result = document.getElementById("result");
 const sizeInfo = document.getElementById("sizeInfo");
 const down = document.getElementById("download");
+const preview = document.getElementById("preview");
 
 let source = null;
 
@@ -29,7 +30,7 @@ quality.addEventListener("input", () => {
 });
 file.addEventListener("change", () => {
     source = file.files && file.files[0] ? file.files[0] : null;
-    if (source) result.hidden = true;
+    if (source) { result.hidden = true; preview.hidden = true; }
 });
 
 function formatSize(b) {
@@ -66,7 +67,10 @@ convertBtn.addEventListener("click", async () => {
     sizeInfo.textContent = out.ext.toUpperCase() + " · " + formatSize(out.blob.size);
 
     if (down.href && down.href.startsWith("blob:")) URL.revokeObjectURL(down.href);
-    down.href = URL.createObjectURL(out.blob);
+    const url = URL.createObjectURL(out.blob);
+    down.href = url;
     down.download = "converted." + out.ext;
+    preview.src = url;
+    preview.hidden = false;
     result.hidden = false;
 });

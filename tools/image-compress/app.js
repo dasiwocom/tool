@@ -8,6 +8,7 @@ const sizeOriginal = document.getElementById("sizeOriginal");
 const sizeNew = document.getElementById("sizeNew");
 const sizeSaved = document.getElementById("sizeSaved");
 const down = document.getElementById("download");
+const preview = document.getElementById("preview");
 
 let source = null;
 
@@ -17,7 +18,7 @@ quality.addEventListener("input", () => {
 
 file.addEventListener("change", () => {
     source = file.files && file.files[0] ? file.files[0] : null;
-    if (source) result.hidden = true;
+    if (source) { result.hidden = true; preview.hidden = true; }
 });
 
 function formatSize(b) {
@@ -50,8 +51,11 @@ compressBtn.addEventListener("click", async () => {
     sizeSaved.textContent = (saved >= 0 ? "-" : "+") + Math.abs(saved).toFixed(1) + "%";
 
     if (down.href) URL.revokeObjectURL(down.href);
-    down.href = URL.createObjectURL(output);
+    const url = URL.createObjectURL(output);
+    down.href = url;
     const dot = type.lastIndexOf("/");
     down.download = "compressed." + (type.slice(dot + 1) === "jpeg" ? "jpg" : type.slice(dot + 1));
+    preview.src = url;
+    preview.hidden = false;
     result.hidden = false;
 });

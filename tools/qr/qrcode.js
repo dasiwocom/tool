@@ -7,17 +7,22 @@
 const QR = (() => {
     const P0 = 0x11D;
 
-    const ECC_WORDS = [
-        [7,10,13,17],[10,16,22,28],[15,26,18,22],[20,18,26,16],[26,24,18,22],
-        [18,16,24,28],[20,18,18,26],[24,22,22,26],[30,22,20,24],[18,26,24,28]
-    ];
-    const ECC_BLOCKS = [
-        [1,1,1,1],[1,1,1,1],[1,1,2,2],[1,2,2,4],[1,2,4,4],
-        [2,4,4,4],[2,4,6,5],[2,4,6,6],[2,5,8,8],[4,5,8,8]
+    /* RS block structure [count, total, data] per version, indexed [ver-1][lvl] */
+    const RS_BLOCKS = [
+        [[[1,26,19]],[[1,26,16]],[[1,26,13]],[[1,26,9]]],
+        [[[1,44,34]],[[1,44,28]],[[1,44,22]],[[1,44,16]]],
+        [[[1,70,55]],[[1,70,44]],[[2,35,17]],[[2,35,13]]],
+        [[[1,100,80]],[[2,50,32]],[[2,50,24]],[[4,25,9]]],
+        [[[1,134,108]],[[2,67,43]],[[2,33,15],[2,34,16]],[[2,33,11],[2,34,12]]],
+        [[[2,86,68]],[[4,43,27]],[[4,43,19]],[[4,43,15]]],
+        [[[2,98,78]],[[4,49,31]],[[2,32,14],[4,33,15]],[[4,39,13],[1,40,14]]],
+        [[[2,121,97]],[[2,60,38],[2,61,39]],[[4,40,18],[2,41,19]],[[4,40,14],[2,41,15]]],
+        [[[2,146,116]],[[3,58,36],[2,59,37]],[[4,36,16],[4,37,17]],[[4,36,12],[4,37,13]]],
+        [[[2,86,68],[2,87,69]],[[4,69,43],[1,70,44]],[[6,43,19],[2,44,20]],[[6,43,15],[2,44,16]]]
     ];
     const ALIGN = {
-        1: [], 2: [18], 3: [22], 4: [26], 5: [30], 6: [34],
-        7: [22,38], 8: [24,42], 9: [26,46], 10: [28,50]
+        1: [], 2: [6,18], 3: [6,22], 4: [6,26], 5: [6,30], 6: [6,34],
+        7: [6,22,38], 8: [6,24,42], 9: [6,26,46], 10: [6,28,50]
     };
 
     let EXP = null, LOG = null;
@@ -38,15 +43,15 @@ const QR = (() => {
     }
 
     function rsDivisor(degree) {
-        let result = new Array(degree + 1).fill(0);
-        result[0] = 1;
+        let result = [1];
         for (let i = 0; i < degree; i++) {
-            const p = result.slice();
-            for (let j = 0; j <= degree; j++) result[j] = 0;
-            for (let j = 0; j <= i; j++) {
-                result[j] = p[j];
-                result[j + 1] = (result[j + 1]) ^ gfMul(p[j], EXP[i]);
+            const p = result;
+            const next = new Array(p.length + 1).fill(0);
+            for (let j = 0; j < p.length; j++) {
+                next[j] ^= p[j];
+                next[j + 1] ^= gfMul(p[j], EXP[i]);
             }
+            result = next;
         }
         return result;
     }
@@ -65,7 +70,13 @@ const QR = (() => {
 
     function rawModules(ver) { return (16 * ver + 128) * ver + 64; }
     function dataCodewordCount(ver, lvl) {
-        return rawModules(ver) / 8 - ECC_WORDS[ver - 1][lvl] * ECC_BLOCKS[ver - 1][lvl];
+        return RS_BLOCKS[ver - 1][lvl].reduce((a, g) => a + g[0] * g[2], 0);
+    }
+    function blockConf(ver, lvl) {
+        const out = [];
+        for (const [count, total, data] of RS_BLOCKS[ver - 1][lvl])
+            for (let i = 0; i < count; i++) out.push({ total, dlen: data, elen: total - data });
+        return out;
     }
 
     function encode(text, opts) {
@@ -83,9 +94,7 @@ const QR = (() => {
         }
         if (!ver) throw new Error("too long");
 
-        const eccWords = ECC_WORDS[ver - 1][lvl];
-        const numBlocks = ECC_BLOCKS[ver - 1][lvl];
-        const rawCW = rawModules(ver) / 8;
+        const conf = blockConf(ver, lvl);
         const capacityBits = dataCodewordCount(ver, lvl) * 8;
         const charBits = ver <= 9 ? 8 : 16;
 
@@ -110,24 +119,21 @@ const QR = (() => {
             cw.push(b);
         }
 
-        const shortLen = Math.floor(rawCW / numBlocks);
-        const numShort = numBlocks - (rawCW % numBlocks);
-        const dataShort = shortLen - eccWords;
-        const dataLong = dataShort + 1;
-
         const blocks = [];
         let pos = 0;
-        for (let b = 0; b < numBlocks; b++) {
-            const len = b < numShort ? dataShort : dataLong;
-            blocks.push({ d: cw.slice(pos, pos + len) });
-            pos += len;
+        for (const b of conf) {
+            blocks.push({ d: cw.slice(pos, pos + b.dlen), elen: b.elen });
+            pos += b.dlen;
         }
-        const divisor = rsDivisor(eccWords);
-        for (const blk of blocks) blk.e = rsRemainder(blk.d, divisor);
+        for (const b of blocks) {
+            const divisor = rsDivisor(b.elen);
+            b.e = rsRemainder(b.d, divisor);
+        }
 
         const result = [];
-        const maxD = Math.max(...blocks.map(b => b.d.length));
-        for (let i = 0; i < maxD; i++) for (const b of blocks) if (i < b.d.length) result.push(b.d[i]);
+        const dataBlocks = blocks.map(b => b.d);
+        const maxD = Math.max(...dataBlocks.map(b => b.length));
+        for (let i = 0; i < maxD; i++) for (const b of dataBlocks) if (i < b.length) result.push(b[i]);
         const maxE = Math.max(...blocks.map(b => b.e.length));
         for (let i = 0; i < maxE; i++) for (const b of blocks) if (i < b.e.length) result.push(b.e[i]);
 
@@ -137,10 +143,6 @@ const QR = (() => {
         const setFn = (r, c, v) => { mod[r][c] = v ? 1 : 0; isFn[r][c] = true; };
 
         (function drawFuncs() {
-            for (let i = 0; i < size; i++) {
-                setFn(6, i, i % 2 === 0);
-                setFn(i, 6, i % 2 === 0);
-            }
             const finder = (r, c) => {
                 for (let dr = -1; dr <= 7; dr++) {
                     for (let dc = -1; dc <= 7; dc++) {
@@ -158,7 +160,7 @@ const QR = (() => {
             finder(0, size - 7);
             for (const ay of ALIGN[ver]) {
                 for (const ax of ALIGN[ver]) {
-                    if ((ay === 6 && ax === 6) || (ay === 6 && ax === size - 7) || (ay === size - 7 && ax === 6)) continue;
+                    if (isFn[ay][ax]) continue;
                     for (let dr = -2; dr <= 2; dr++) {
                         for (let dc = -2; dc <= 2; dc++) {
                             setFn(ay + dr, ax + dc, Math.max(Math.abs(dr), Math.abs(dc)) !== 1);
@@ -166,14 +168,21 @@ const QR = (() => {
                     }
                 }
             }
+            for (let i = 8; i < size - 8; i++) {
+                if (!isFn[i][6]) setFn(i, 6, i % 2 === 0);
+                if (!isFn[6][i]) setFn(6, i, i % 2 === 0);
+            }
             setFn(size - 8, 8, 1);
-            /* pre-mark format info cells so data placement skips them */
+            /* pre-mark format info cells so data placement skips them (matches python setup_type_info) */
             for (let i = 0; i < 15; i++) {
-                const r = i < 6 ? 8 : i < 8 ? 8 : 8;
-                const c = i < 6 ? i : i < 8 ? i + 1 : size - 15 + i;
-                isFn[r][c] = true;
-                const r2 = i < 8 ? size - 1 - i : size - 15 + i;
-                isFn[r2][8] = true;
+                /* vertical copy (column 8) */
+                if (i < 6) isFn[i][8] = true;
+                else if (i < 8) isFn[i + 1][8] = true;
+                else isFn[size - 15 + i][8] = true;
+                /* horizontal copy (row 8) */
+                if (i < 8) isFn[8][size - 1 - i] = true;
+                else if (i < 9) isFn[8][15 - i - 1 + 1] = true;
+                else isFn[8][15 - i - 1] = true;
             }
             if (size >= 45) {
                 let vbits = ver << 12;
@@ -219,17 +228,24 @@ const QR = (() => {
         ];
 
         const drawFormat = (m, mask) => {
-            const bits = ((lvl << 3) | mask);
+            const eccInd = { 0: 1, 1: 0, 2: 3, 3: 2 }[lvl]; /* L,M,Q,H -> format indicator bits */
+            const bits = ((eccInd << 3) | mask);
             let rem = bits;
             for (let i = 0; i < 10; i++) rem = (rem << 1) ^ ((rem >>> 9) * 0x537);
             const fbits = ((bits << 10) | rem) ^ 0x5412;
+            /* vertical copy (column 8) */
             for (let i = 0; i < 15; i++) {
                 const bit = (fbits >>> i) & 1;
-                if (i < 6) m[8][i] = bit;
-                else if (i < 8) m[8][i + 1] = bit;
-                else m[8][size - 15 + i] = bit;
-                if (i < 8) m[size - 1 - i][8] = bit;
+                if (i < 6) m[i][8] = bit;
+                else if (i < 8) m[i + 1][8] = bit;
                 else m[size - 15 + i][8] = bit;
+            }
+            /* horizontal copy (row 8) */
+            for (let i = 0; i < 15; i++) {
+                const bit = (fbits >>> i) & 1;
+                if (i < 8) m[8][size - 1 - i] = bit;
+                else if (i < 9) m[8][15 - i - 1 + 1] = bit;
+                else m[8][15 - i - 1] = bit;
             }
         };
 
@@ -291,7 +307,7 @@ const QR = (() => {
             drawFormat(m, mask);
             const s = penalty(m);
             allMs.push({ mask, m });
-            if (!best || s < best.s) best = { s, m };
+            if (!best || s < best.s) best = { s, m, mask };
         }
 
         if (opts.allMasks) return allMs.map(x => ({ mask: x.mask, matrix: x.m }));
@@ -304,3 +320,5 @@ const QR = (() => {
 })();
 
 if (typeof module !== "undefined" && typeof module.exports !== "undefined") module.exports = QR;
+if (typeof window !== "undefined") window.QR = QR;
+if (typeof window !== "undefined") window.QRCode = QR;

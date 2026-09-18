@@ -116,7 +116,6 @@ cropBtn.addEventListener("click", () => {
     preview.src = url;
 
     if (down.href && down.href.startsWith("data:image")) URL.revokeObjectURL(down.href);
-    preview.href = url;
     down.href = url;
     down.download = "cropped.png";
     cropResult.hidden = false;

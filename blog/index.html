@@ -14,34 +14,33 @@
 }catch(e){}})();
 setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
 </script>
-<title>JSON Formatter · ToolBox</title>
+<title>Blog · ToolBox</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
-<script src="../../core.js?v=20260919e"></script>
-<link rel="stylesheet" href="../../styles.css?v=20260919e">
+<script src="../core.js?v=20260919e"></script>
+<link rel="stylesheet" href="../styles.css?v=20260919e">
 </head>
 <body>
 
 <header class="site-header">
     <div class="header-inner">
-        <a class="brand" href="../../index.html">
+        <a class="brand" href="../index.html">
             <span class="brand-mark">T</span>
             <span data-i18n="siteName">ToolBox</span>
         </a>
         <nav class="site-nav">
-            <a href="../../index.html" data-i18n="home">Home</a>
-            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
-            <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../blog/index.html" data-i18n="blog">Blog</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../index.html" data-i18n="home">Home</a>
+            <a href="../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../download/index.html" data-i18n="download">Download</a>
+            <a href="../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../contact/index.html" data-i18n="contact">Contact</a>
         </nav>
         <div class="header-actions">
-
             <button id="langToggle" class="icon-btn">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
                 <span class="btn-label">English</span>
             </button>
             <button id="themeToggle" class="icon-btn"><span id="themeIcon"></span></button>
-                    <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" data-i18n-title="menu" title="Menu">
+            <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" data-i18n-title="menu" title="Menu">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M3 4h18M3 12h18M3 20h18"/></svg>
                 <span class="btn-label"></span>
             </button>
@@ -50,31 +49,17 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 </header>
 
 <main class="tool-page">
-    <div class="tool-head" data-tool-key="json">
-        <h1>JSON Formatter</h1>
-        <p>Prettify, minify, and validate JSON</p>
+    <div class="tool-head">
+        <h1 data-i18n="blogTitle">Blog</h1>
+        <p data-i18n="blogDesc">Notes, tutorials, and updates</p>
     </div>
 
-    <div class="section">
-        <div class="section-label">
-            <span data-i18n="input">Input</span>
-            <button class="btn-ghost" id="fillSample" data-i18n="fill">Fill with sample data</button>
+    <section class="section">
+        <div class="empty-state" style="text-align:center; padding:48px 20px; color:var(--text-muted);">
+            <span class="card-icon" style="margin:0 auto 14px; display:inline-grid;"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></span>
+            <p data-i18n="blogEmpty">No posts yet — stay tuned.</p>
         </div>
-        <textarea id="input" class="code" rows="8" spellcheck="false" placeholder='{"key": "value"}'></textarea>
-    </div>
-
-    <div class="alert error" id="alert"></div>
-
-    <div class="section">
-        <div class="section-label"><span data-i18n="output">Output</span></div>
-        <textarea id="output" class="output" rows="10" readonly spellcheck="false"></textarea>
-        <div class="btn-row">
-            <button class="btn btn-primary" id="prettify" data-i18n="prettify">Prettify</button>
-            <button class="btn btn-primary" id="minify" data-i18n="minify">Minify</button>
-            <button class="btn btn-secondary btn-sm" data-i18n="copy" id="copyOut">Copy</button>
-            <button class="btn btn-secondary btn-sm" data-i18n="clear" id="clearOut">Clear</button>
-        </div>
-    </div>
+    </section>
 </main>
 
 <footer class="site-footer">
@@ -91,11 +76,11 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             </div>
             <div class="footer-col">
                 <h4 data-i18n="footerTools">Popular tools</h4>
-                <a href="../../tools/json/index.html">JSON</a>
-                <a href="../../tools/base64/index.html">Base64</a>
-                <a href="../../tools/url/index.html">URL</a>
-                <a href="../../tools/qr/index.html">QR</a>
-                <a href="../../tools/uuid/index.html">UUID</a>
+                <a href="../tools/json/index.html">JSON</a>
+                <a href="../tools/base64/index.html">Base64</a>
+                <a href="../tools/url/index.html">URL</a>
+                <a href="../tools/qr/index.html">QR</a>
+                <a href="../tools/uuid/index.html">UUID</a>
             </div>
             <div class="footer-col">
                 <h4 data-i18n="friendsTitle">Friends</h4>
@@ -103,14 +88,13 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
                 <a href="#">Eine</a>
                 <a href="#">MDN</a>
             </div>
-            <div class="footer-col">
-                <h4 data-i18n="legal">Legal</h4>
-                <a href="#" data-i18n="privacy">Privacy Policy</a>
-                <a href="#" data-i18n="terms">Terms of Service</a>
-            </div>
         </div>
         <div class="footer-bottom">
             <p class="footer-note">© 2026 ToolBox</p>
+            <div class="footer-legal">
+                <a href="../privacy/index.html" data-i18n="privacy">Privacy Policy</a>
+                <a href="../terms/index.html" data-i18n="terms">Terms of Service</a>
+            </div>
         </div>
     </div>
 </footer>
@@ -119,7 +103,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
     <div class="drawer-backdrop" data-close-drawer></div>
     <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
         <div class="drawer-head">
-            <a class="brand" href="../../index.html">
+            <a class="brand" href="../index.html">
                 <span class="brand-mark">T</span>
                 <span data-i18n="siteName">ToolBox</span>
             </a>
@@ -128,16 +112,15 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             </button>
         </div>
         <nav class="drawer-nav">
-            <a href="../../index.html" class="active" data-i18n="home">Home</a>
-            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
-            <a href="../../download/index.html" data-i18n="download">Download</a>
-<a href="../../blog/index.html" data-i18n="blog">Blog</a>
-<a href="../../contact/index.html" data-i18n="contact">Contact</a>
+            <a href="../index.html" data-i18n="home">Home</a>
+            <a href="../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../download/index.html" data-i18n="download">Download</a>
+            <a href="../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../contact/index.html" data-i18n="contact">Contact</a>
         </nav>
         <div class="drawer-foot" data-i18n="footer"></div>
     </div>
 </div>
 
-<script src="app.js?v=20260919e"></script>
 </body>
 </html>
