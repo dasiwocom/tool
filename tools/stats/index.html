@@ -10,11 +10,13 @@
   var d=document.documentElement;
   if(t==="dark"){d.setAttribute("data-theme","dark")}
   if(l==="en"||l==="zh"){d.setAttribute("lang",l)}
+  if(l!=="en"){d.classList.add("i18n-pending")}
 }catch(e){}})();
+setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
 </script>
 <title>Text Counter · ToolBox</title>
-<script src="../../core.js?v=20260918g"></script>
-<link rel="stylesheet" href="../../styles.css?v=20260918g">
+<script src="../../core.js?v=20260918h"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260918h">
 </head>
 <body>
 
@@ -102,6 +104,6 @@
     </div>
 </div>
 
-<script src="app.js?v=20260918g"></script>
+<script src="app.js?v=20260918h"></script>
 </body>
 </html>

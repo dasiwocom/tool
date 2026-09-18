@@ -331,6 +331,7 @@ function boot() {
         if (!build) el.classList.add("stale");
         el.textContent = build ? badge : "STALE — reload without cache";
         document.body.appendChild(el);
+        document.documentElement.classList.remove("i18n-pending");
     })();
 }
 

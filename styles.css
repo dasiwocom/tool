@@ -12,8 +12,8 @@
     --radius-lg: 22px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --theme-dur: 0s;      /* theme switch is insta-snapshot: fully in-frame */
-    --build: "20260918g"; /* visible build marker — bump on every deploy */
-    --badge-text: "v20260918g"; /* keep in sync with --build */
+    --build: "20260918h"; /* visible build marker — bump on every deploy */
+    --badge-text: "v20260918h"; /* keep in sync with --build */
 }
 
 [data-theme="light"] {
@@ -90,6 +90,12 @@
 [data-theme] body { transition: background-color var(--theme-dur) var(--ease), color var(--theme-dur) var(--ease); }
 
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+/* Anti-FOUC: hide translatable text until the language is applied.
+   Prevents an EN->ZH flash on browsers that paint before DOMContentLoaded. */
+html.i18n-pending [data-i18n],
+html.i18n-pending .tool-head h1,
+html.i18n-pending .tool-head p { visibility: hidden; }
 
 body {
     font-family: var(--font);
