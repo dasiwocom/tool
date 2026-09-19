@@ -12,8 +12,8 @@
     --radius-lg: 22px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --theme-dur: 0s;      /* theme switch is insta-snapshot: fully in-frame */
-    --build: "20260919h"; /* visible build marker — bump on every deploy */
-    --badge-text: "v20260919h"; /* keep in sync with --build */
+    --build: "20260919i"; /* visible build marker — bump on every deploy */
+    --badge-text: "v20260919i"; /* keep in sync with --build */
 }
 
 [data-theme="light"] {
@@ -197,7 +197,7 @@ button {
    ========================================================== */
 .hero {
     text-align: center;
-    padding: 96px 20px 64px;
+    padding: 48px 20px 56px;
     max-width: 760px;
     margin: 0 auto;
 }
@@ -343,7 +343,7 @@ button {
 .tool-page {
     max-width: 640px;
     margin: 0 auto;
-    padding: 48px 20px 96px;
+    padding: 24px 20px 96px;
 }
 
 .tool-head {
@@ -886,7 +886,7 @@ input.output { font-family: var(--mono); font-size: 13px; }
 .changelog-page {
     max-width: 720px;
     margin: 0 auto;
-    padding: 48px 20px 96px;
+    padding: 24px 20px 96px;
 }
 
 .changelog-head {
@@ -1225,9 +1225,9 @@ input.output { font-family: var(--mono); font-size: 13px; }
     .grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
     .footer-brand-col { grid-column: 1 / -1; }
-    .hero { padding: 64px 20px 44px; }
-    .tool-page { padding: 32px 20px 72px; }
-    .changelog-page { padding: 32px 20px 72px; }
+    .hero { padding: 32px 20px 40px; }
+    .tool-page { padding: 16px 20px 64px; }
+    .changelog-page { padding: 16px 20px 64px; }
     .header-inner { padding: 0 14px; }
     .icon-btn .btn-label { display: none; }
     .icon-btn { padding: 0; width: 34px; justify-content: center; }
