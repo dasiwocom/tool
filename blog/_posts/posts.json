@@ -1,0 +1,41 @@
+[
+  {
+    "slug": "json-formatter",
+    "tool": "json",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "JSON 格式化工具：美化、压缩与校验一篇讲透",
+      "en": "JSON Formatter: Prettify, Minify, and Validate, Explained"
+    },
+    "desc": {
+      "zh": "在线 JSON 格式化工具使用指南：美化缩进、压缩体积、语法校验、常见踩坑与最佳实践，全程在浏览器本地处理，数据不会上传。",
+      "en": "A practical guide to the online JSON formatter: pretty-printing, minifying, validation, common pitfalls, and best practices — fully local in your browser."
+    }
+  },
+  {
+    "slug": "base64-encoder",
+    "tool": "base64",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "Base64 是什么？在线编码解码与 URL 安全模式详解",
+      "en": "What Is Base64? Encoding, Decoding, and URL-Safe Mode, Explained"
+    },
+    "desc": {
+      "zh": "Base64 在线编解码指南：讲清原理、标准与 URL 安全模式的区别，以及为什么 Base64 不是加密，全程在浏览器本地处理。",
+      "en": "A Base64 guide: what it is, how encoding and decoding work, the difference between standard and URL-safe alphabets, and why Base64 is not encryption — all local in your browser."
+    }
+  },
+  {
+    "slug": "url-encoder",
+    "tool": "url",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "URL 编码解码：空格、中文与特殊字符如何安全地放进链接",
+      "en": "URL Encoding Explained: Spaces, Chinese Characters, and Special Chars in Links"
+    },
+    "desc": {
+      "zh": "URL 编解码在线工具指南：为什么链接里要转义、空格与中文会被处理成什么，以及 encodeURI 与 encodeURIComponent 的区别。",
+      "en": "A guide to URL encoding: why links must escape special characters, how spaces and Chinese text are encoded, and when to use encodeURI vs encodeURIComponent."
+    }
+  }
+]

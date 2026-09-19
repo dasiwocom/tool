@@ -1,0 +1,19 @@
+<h2>Why links must be escaped</h2>
+<p>A URL only allows a limited set of characters directly. Spaces, Chinese text, quotes, angle brackets, and <code>#</code> either truncate the request or get misinterpreted by the server. Encoding replaces those characters with their safe form; decoding restores them.</p>
+
+<h2>What this tool does</h2>
+<p>Open the <a href="../../tools/url/index.html">URL encoder</a> and paste text to encode or decode it. Two granularities are available, matching the two JavaScript functions:</p>
+<ul>
+    <li><strong>Component encoding (encodeURIComponent)</strong> — also escapes separators like <code>/</code> <code>:</code> <code>?</code> <code>&</code>; use this inside a query parameter.</li>
+    <li><strong>Whole-URL encoding (encodeURI)</strong> — keeps separators intact and escapes everything else; use it on a complete address.</li>
+</ul>
+
+<h2>How Chinese text is handled</h2>
+<p>Unicode characters are converted to their UTF-8 byte stream, then each byte is written as a <code>%XX</code> escape. For example, the two characters for "tool" become <code>%E5%B7%A5%E5%85%B7</code>. As long as both ends speak UTF-8, Chinese travels safely in links.</p>
+
+<h2>Common mistakes</h2>
+<ul>
+    <li><strong>Decoding is not decrypting</strong> — anyone can strip the percent escapes to recover the original.</li>
+    <li><strong>Don't whole-encode query parameters</strong> — it masks <code>&</code> and <code>=</code>, and the server can no longer split them.</li>
+    <li><strong>A space may be <code>+</code></strong> — in forms and query strings a space encodes as <code>+</code>, while in paths it is <code>%20</code>.</li>
+</ul>

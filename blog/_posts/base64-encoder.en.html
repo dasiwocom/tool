@@ -1,0 +1,19 @@
+<h2>What is Base64?</h2>
+<p>Base64 is an encoding that translates arbitrary binary data into 64 printable characters. It is not about secrecy — it exists so data can travel safely through text-only channels: email, JSON, URLs, and small images embedded in HTML.</p>
+
+<h2>What this tool does</h2>
+<p>Open the <a href="../../tools/base64/index.html">Base64 encoder</a>: paste any text to encode, paste a Base64 string to decode, and copy the result in one click. Two alphabets are available:</p>
+<ul>
+    <li><strong>Standard mode</strong> — the common alphabet, including <code>+</code> <code>/</code> <code>=</code>.</li>
+    <li><strong>URL-safe mode</strong> — swaps <code>+</code> and <code>/</code> for <code>-</code> and <code>_</code> and drops the <code>=</code> padding, so the result survives links and JWTs without escaping.</li>
+</ul>
+
+<h2>Key facts</h2>
+<ul>
+    <li><strong>Base64 is not encryption</strong> — anyone can decode it with the same tool. Encrypt first, then encode.</li>
+    <li><strong>Size overhead</strong> — output is about 4/3 the original; weigh that before shipping large files.</li>
+    <li><strong>Decode failures</strong> — usually stray spaces, line breaks, or the wrong alphabet.</li>
+</ul>
+
+<h2>Typical uses</h2>
+<p>Inline icons via data URIs, JWT segments, and squeezing binary fields into text protocols — URL-safe mode is the safer choice in all of these. Everything runs locally.</p>

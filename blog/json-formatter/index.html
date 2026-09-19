@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){try{
+  var t=localStorage.getItem("toolbox-theme");
+  var l=localStorage.getItem("toolbox-lang");
+  var d=document.documentElement;
+  if(t==="dark"){d.setAttribute("data-theme","dark")}
+  if(l==="en"||l==="zh"){d.setAttribute("lang",l)}
+  if(l!=="en"){d.classList.add("i18n-pending")}
+}catch(e){}})();
+setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
+</script>
+<title>JSON 格式化工具：美化、压缩与校验一篇讲透 · ToolBox</title>
+<meta name="description" content="A practical guide to the online JSON formatter: pretty-printing, minifying, validation, common pitfalls, and best practices — fully local in your browser.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
+<script src="../../core.js?v=20260919u"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260919u">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="../../index.html">
+            <span data-i18n="siteName">ToolBox</span>
+        </a>
+        <nav class="site-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button id="langToggle" class="icon-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+                <span class="btn-label">English</span>
+            </button>
+            <button id="themeToggle" class="icon-btn"><span id="themeIcon"></span></button>
+            <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" data-i18n-title="menu" title="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+                <span class="btn-label"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="tool-page">
+    <div class="tool-head">
+        <nav class="breadcrumbs">
+            <a href="../../blog/index.html" data-i18n="blog">Blog</a>
+            <span class="crumb-sep">›</span>
+            <span class="lang-zh">JSON 格式化工具：美化、压缩与校验一篇讲透</span><span class="lang-en">JSON Formatter: Prettify, Minify, and Validate, Explained</span>
+        </nav>
+        <h1 class="lang-zh">JSON 格式化工具：美化、压缩与校验一篇讲透</h1>
+        <h1 class="lang-en">JSON Formatter: Prettify, Minify, and Validate, Explained</h1>
+        <p class="post-meta">ToolBox Blog · 2026-09-19</p>
+    </div>
+
+    <section class="section">
+        <article class="post-body">
+            <div class="lang-zh"><h2>JSON 是什么</h2>
+<p>JSON（JavaScript Object Notation）是目前使用最广泛的轻量级数据交换格式。接口返回、配置文件、日志导出，几乎处处都是它。可一旦数据多了、嵌套深了，肉眼几乎没法看：缩进混乱、字符挤成一团，复制到别处还经常报错。</p>
+
+<h2>这个工具能做什么</h2>
+<p>打开 <a href="../../tools/json/index.html">JSON 格式化工具</a>，把代码贴进输入框，工具会同时做三件事：</p>
+<ul>
+    <li><strong>美化（Prettify）</strong>：自动缩进对齐，并给键值对上色，层级一目了然。</li>
+    <li><strong>压缩（Minify）</strong>：去掉所有空白，把 JSON 压成一行，适合塞进缓存、数据库或请求参数。</li>
+    <li><strong>校验（Validate）</strong>：语法出错时实时标出在第几行、第几列、具体是什么问题，不用再自己对逗号和括号。</li>
+</ul>
+
+<h2>常见踩坑</h2>
+<ul>
+    <li><strong>尾逗号</strong>：最后一个字段后面不能有逗号，很多手写 JSON 都栽在这里。</li>
+    <li><strong>键必须加双引号</strong>：单引号或裸键都是非法写法。</li>
+    <li><strong>中文不用转义</strong>：JSON 原生支持 Unicode，中文可以直接写，美化后不会乱码。</li>
+</ul>
+
+<h2>什么时候压缩，什么时候美化</h2>
+<p>调试接口时用美化看结构；写入缓存、数据库或缩短 URL 时用压缩减小体积。两者在工具里一键切换，校验结果始终实时显示。</p>
+<p>所有处理都在你的浏览器本地完成，数据不会上传到任何服务器。</p></div>
+            <div class="lang-en"><h2>What is JSON?</h2>
+<p>JSON (JavaScript Object Notation) is the most widely used lightweight data format — API responses, config files, and log exports all speak it. The trouble starts when you need to read it: deeply nested data with inconsistent indentation and crammed characters is nearly impossible to scan by eye.</p>
+
+<h2>What this tool does</h2>
+<p>Open the <a href="../../tools/json/index.html">JSON formatter</a>, paste your text, and the tool does three things at once:</p>
+<ul>
+    <li><strong>Prettify</strong> — auto-indents and colors keys and values so the hierarchy is instantly readable.</li>
+    <li><strong>Minify</strong> — strips all whitespace and collapses the JSON to one line, ideal for caches, databases, or request payloads.</li>
+    <li><strong>Validate</strong> — flags syntax errors in place, pointing at the exact line and column instead of guessing where the comma belongs.</li>
+</ul>
+
+<h2>Common pitfalls</h2>
+<ul>
+    <li><strong>Trailing commas</strong> — the last field must not end with a comma; most hand-written JSON fails here first.</li>
+    <li><strong>Keys must be double-quoted</strong> — single quotes or bare keys are invalid.</li>
+    <li><strong>Unicode is native</strong> — Chinese characters can be written directly; formatting will never garble them.</li>
+</ul>
+
+<h2>Prettify vs. minify</h2>
+<p>Use prettify while debugging to see structure; use minify when writing to storage, caches, or shrinking URLs. One click switches between them, and validation is always live.</p>
+<p>Everything runs locally in your browser — nothing is ever uploaded.</p></div>
+        </article>
+        <div class="post-cta">
+            <a class="btn btn-primary" href="../../tools/json/index.html"><span class="lang-en">Open the tool</span><span class="lang-zh">打开工具</span></a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand-col">
+                <div class="footer-brand"><span data-i18n="siteName">ToolBox</span></div>
+                <p class="footer-tagline" data-i18n="footer">All processing happens in your browser</p>
+                <div class="footer-friend">
+                    <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                    <a href="#" aria-label="RSS"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footerTools">Popular tools</h4>
+                <a href="../../tools/json/index.html">JSON</a>
+                <a href="../../tools/base64/index.html">Base64</a>
+                <a href="../../tools/url/index.html">URL</a>
+                <a href="../../tools/qr/index.html">QR</a>
+                <a href="../../tools/uuid/index.html">UUID</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="friendsTitle">Friends</h4>
+                <a href="#">Dasiwo</a>
+                <a href="#">Eine</a>
+                <a href="#">MDN</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="legal">Legal</h4>
+                <a href="#" data-i18n="privacy">Privacy Policy</a>
+                <a href="#" data-i18n="terms">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">© 2026 ToolBox</p>
+        </div>
+    </div>
+</footer>
+<div class="toast" id="toast"></div>
+<div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="drawer-head">
+            <a class="brand" href="../../index.html">
+                <span data-i18n="siteName">ToolBox</span>
+            </a>
+            <button class="drawer-close" data-close-drawer>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="drawer-foot" data-i18n="footer"></div>
+    </div>
+</div>
+
+</body>
+</html>

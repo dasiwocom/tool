@@ -1,0 +1,19 @@
+<h2>为什么链接里要转义</h2>
+<p>URL 本身只允许一部分字符直接出现。空格、中文、引号、尖括号、<code>#</code> 等字符如果原样放进链接，要么在请求时被截断，要么被服务器误解。编码就是把这些字符替换成安全形式，解码则是还原。</p>
+
+<h2>这个工具能做什么</h2>
+<p>打开 <a href="../../tools/url/index.html">URL 编解码工具</a>，粘贴文本即可编码或解码。工具区分两种粒度，对应 JavaScript 里两个不同函数：</p>
+<ul>
+    <li><strong>组件编码（encodeURIComponent）</strong>：连 <code>/</code> <code>:</code> <code>?</code> <code>&</code> 等分隔符也一起转义，适合放在查询参数里。</li>
+    <li><strong>整体编码（encodeURI）</strong>：保留分隔符不动，只转义其他特殊字符，适合编码整个地址。</li>
+</ul>
+
+<h2>中文如何处理</h2>
+<p>中文等 Unicode 字符会先被转换为 UTF-8 字节流，再逐个字节编码成 <code>%XX</code> 形式。例如"工具"会被编码成 <code>%E5%B7%A5%E5%85%B7</code>。因此只要服务端和客户端都用 UTF-8，中文就能安全地放在链接里。</p>
+
+<h2>常见误区</h2>
+<ul>
+    <li><strong>解码不等于解密</strong>：任何人去掉百分号编码都能还原原文。</li>
+    <li><strong>别整体编码查询参数</strong>：会把 <code>&</code> <code>=</code> 也转义掉，服务端就分不清参数了。</li>
+    <li><strong>空格可以是 <code>+</code></strong>：在表单与查询串里空格常编码为 <code>+</code>，而路径里是 <code>%20</code>。</li>
+</ul>

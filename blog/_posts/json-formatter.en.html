@@ -1,0 +1,21 @@
+<h2>What is JSON?</h2>
+<p>JSON (JavaScript Object Notation) is the most widely used lightweight data format — API responses, config files, and log exports all speak it. The trouble starts when you need to read it: deeply nested data with inconsistent indentation and crammed characters is nearly impossible to scan by eye.</p>
+
+<h2>What this tool does</h2>
+<p>Open the <a href="../../tools/json/index.html">JSON formatter</a>, paste your text, and the tool does three things at once:</p>
+<ul>
+    <li><strong>Prettify</strong> — auto-indents and colors keys and values so the hierarchy is instantly readable.</li>
+    <li><strong>Minify</strong> — strips all whitespace and collapses the JSON to one line, ideal for caches, databases, or request payloads.</li>
+    <li><strong>Validate</strong> — flags syntax errors in place, pointing at the exact line and column instead of guessing where the comma belongs.</li>
+</ul>
+
+<h2>Common pitfalls</h2>
+<ul>
+    <li><strong>Trailing commas</strong> — the last field must not end with a comma; most hand-written JSON fails here first.</li>
+    <li><strong>Keys must be double-quoted</strong> — single quotes or bare keys are invalid.</li>
+    <li><strong>Unicode is native</strong> — Chinese characters can be written directly; formatting will never garble them.</li>
+</ul>
+
+<h2>Prettify vs. minify</h2>
+<p>Use prettify while debugging to see structure; use minify when writing to storage, caches, or shrinking URLs. One click switches between them, and validation is always live.</p>
+<p>Everything runs locally in your browser — nothing is ever uploaded.</p>

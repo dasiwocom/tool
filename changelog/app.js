@@ -1,9 +1,38 @@
 /* Timeline — chronological (latest first) */
 const VERSIONS = [
     {
+        v: "1.5",
+        date: "2026-09-19",
+        latest: true,
+        title: {
+            en: "Document tools · PDF to Word, Word to PDF, PDF to Image, HTML to Markdown",
+            zh: "文档工具 · PDF 转 Word、Word 转 PDF、PDF 转图片、HTML 转 Markdown"
+        },
+        items: {
+            en: [
+                "New tool: PDF to Word — turn a PDF into an editable .docx, or embed page images for an exact look",
+                "New tool: Word to PDF — render a .docx preview and export it as PDF via your browser",
+                "New tool: PDF to Image — render every page as a PNG, download individually or as a ZIP",
+                "New tool: HTML to Markdown — clean conversion with GFM tables preserved",
+                "New tool: Camera Test — list detected webcams, supported resolutions, and test the flashlight",
+                "New tool: Keyboard Test — press every key on a live keyboard, check rollover and inspect raw events",
+                "Document conversion runs 100% locally in your browser"
+            ],
+            zh: [
+                "新增工具：PDF 转 Word — 把 PDF 转为可编辑的 .docx，或嵌入整页图片保留版式",
+                "新增工具：Word 转 PDF — 渲染 .docx 预览，通过浏览器打印导出为 PDF",
+                "新增工具：PDF 转图片 — 把每一页渲染成 PNG，可单张下载或打包 ZIP",
+                "新增工具：HTML 转 Markdown — 干净的转换结果，保留 GFM 表格",
+                "新增工具：摄像头测试 — 列出检测到的摄像头与支持的分辨率，并测试闪光灯",
+                "新增工具：键盘测试 — 实时点亮每个按键，检测键位冲突并查看原始按键事件",
+                "文档转换全部在浏览器本地完成，数据不会上传"
+            ]
+        }
+    },
+    {
         v: "1.4",
         date: "2026-09-18",
-        latest: true,
+        latest: false,
         title: {
             en: "Contact page · new image tools · more convert formats",
             zh: "联系页 · 图片新工具 · 更多转格式"
