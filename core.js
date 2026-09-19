@@ -313,8 +313,8 @@ function applyTheme(next) {
     const icon = document.getElementById("themeIcon");
     if (icon) {
         icon.innerHTML = theme === "dark"
-            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4.5"/><path stroke-linecap="round" d="M12 7.5L12 3M12 16.5L12 21M7.5 12L3 12M16.5 12L21 12M8.8 8.8L5.64 5.64M15.2 15.2L18.36 18.36M8.8 15.2L5.64 18.36M15.2 8.8L18.36 5.64"/></svg>'
-            : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path transform="translate(-1.171 -1.171) scale(1.0976)" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>';
+            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 7.5L12 3M12 16.5L12 21M7.5 12L3 12M16.5 12L21 12M8.8 8.8L5.64 5.64M15.2 15.2L18.36 18.36M8.8 15.2L5.64 18.36M15.2 8.8L18.36 5.64"/></svg>'
+            : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(-1.171 -1.171) scale(1.0976)" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>';
     }
 }
 
