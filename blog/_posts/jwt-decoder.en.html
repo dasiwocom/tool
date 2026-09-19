@@ -1,0 +1,14 @@
+<h2>What a JWT looks like</h2>
+<p>A JSON Web Token is a string like <code>eyJhbGci...signature</code> — three Base64 segments holding the header, payload, and signature. It powers login states and API authentication all over the web.</p>
+
+<h2>What the decoder reveals</h2>
+<p>Open the <a href="../../tools/jwt/index.html">JWT decoder</a> and paste any token to inspect:</p>
+<ul>
+    <li><strong>Header</strong> — the signing algorithm (HS256 and friends) plus type info.</li>
+    <li><strong>Payload</strong> — business fields, both standard and custom.</li>
+    <li><strong>Expiry (exp)</strong> — the concrete expiration time, so you can tell if it is about to lapse.</li>
+</ul>
+<p>A sample token is built in, so loading it and trying the tool takes one click.</p>
+
+<h2>A security note</h2>
+<p>Decoding only restores the Base64 — it does not verify the signature or "decrypt" anything. Signature validity must be checked server-side with the right key. If your payload holds sensitive data, rest assured: this parsing happens locally and nothing is uploaded.</p>

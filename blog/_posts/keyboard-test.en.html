@@ -1,0 +1,15 @@
+<h2>What the keyboard test tool does</h2>
+<p>Checking out a new keyboard, hunting a dead key, or verifying that simultaneous presses register correctly — the <a href="../../tools/keyboard-test/index.html">Keyboard Test tool</a> figures it out in seconds:</p>
+<ul>
+    <li><strong>Keys light up live</strong> — press any key and the matching key on the virtual keyboard highlights immediately.</li>
+    <li><strong>Rollover detection</strong> — press several keys at once and watch whether each one registers correctly.</li>
+    <li><strong>Hold state</strong> — see which keys are held down and whether auto-repeat is firing.</li>
+    <li><strong>Raw events</strong> — the event log shows <code>key</code>, <code>code</code>, <code>keyCode</code>, location, and modifiers for every press, handy for debugging scripts or remapping keys.</li>
+</ul>
+
+<h2>How to read the results</h2>
+<p>If a key does not light up when pressed, it is not being recognized — possibly a faulty key, a driver issue, or a layout mismatch. Gamers care most about rollover: hold Shift and press several letter keys; if some combinations miss, the keyboard has key conflicts.</p>
+<p>Every log entry carries the full parameter set (key value, code, location, repeat flag), and the ✕ button clears the log so you can inspect sections one by one.</p>
+
+<h2>Notes</h2>
+<p>The tool reads the browser's standard key events — no drivers or software to install, works across platforms. Everything runs locally, and your input is never recorded or uploaded.</p>

@@ -12,8 +12,8 @@
     --radius-lg: 22px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --theme-dur: 0s;      /* theme switch is insta-snapshot: fully in-frame */
-    --build: "20260919u"; /* visible build marker — bump on every deploy */
-    --badge-text: "v20260919u"; /* keep in sync with --build */
+    --build: "20260919v"; /* visible build marker — bump on every deploy */
+    --badge-text: "v20260919v"; /* keep in sync with --build */
 }
 
 [data-theme="light"] {

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){try{
+  var t=localStorage.getItem("toolbox-theme");
+  var l=localStorage.getItem("toolbox-lang");
+  var d=document.documentElement;
+  if(t==="dark"){d.setAttribute("data-theme","dark")}
+  if(l==="en"||l==="zh"){d.setAttribute("lang",l)}
+  if(l!=="en"){d.classList.add("i18n-pending")}
+}catch(e){}})();
+setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
+</script>
+<title>图片拼接：多张图片横排或竖排合成一张 · ToolBox</title>
+<meta name="description" content="An online image stitcher: merge multiple images into one long picture, horizontally or vertically, with an adjustable gap — great for screenshot threads and comparison panels.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
+<script src="../../core.js?v=20260919v"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260919v">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="../../index.html">
+            <span data-i18n="siteName">ToolBox</span>
+        </a>
+        <nav class="site-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button id="langToggle" class="icon-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+                <span class="btn-label">English</span>
+            </button>
+            <button id="themeToggle" class="icon-btn"><span id="themeIcon"></span></button>
+            <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" data-i18n-title="menu" title="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+                <span class="btn-label"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="tool-page">
+    <div class="tool-head">
+        <nav class="breadcrumbs">
+            <a href="../../blog/index.html" data-i18n="blog">Blog</a>
+            <span class="crumb-sep">›</span>
+            <span class="lang-zh">图片拼接：多张图片横排或竖排合成一张</span><span class="lang-en">Image Stitch: Merge Images Horizontally or Vertically</span>
+        </nav>
+        <h1 class="lang-zh">图片拼接：多张图片横排或竖排合成一张</h1>
+        <h1 class="lang-en">Image Stitch: Merge Images Horizontally or Vertically</h1>
+        <p class="post-meta">ToolBox Blog · 2026-09-19</p>
+    </div>
+
+    <section class="section">
+        <article class="post-body">
+            <div class="lang-zh"><h2>什么时候拼接图片</h2>
+<p>聊天截图一条条发太乱，拼成一张长图便于分享；做对比图、流程示意图、海报碎片合成，都需要把多张图拼在一起。</p>
+
+<h2>这个工具怎么用</h2>
+<p>打开 <a href="../../tools/image-stitch/index.html">图片拼接工具</a>：</p>
+<ol>
+    <li><strong>选择多张图片</strong>：按顺序添加要拼接的图片。</li>
+    <li><strong>选择方向</strong>：水平拼接（横向排开）或垂直拼接（上下排列）。</li>
+    <li><strong>设置间隙</strong>：可在图片之间留出指定像素的间距。</li>
+    <li><strong>拼接下载</strong>：一键合成一张长图并下载。</li>
+</ol>
+
+<h2>小提示</h2>
+<p>拼接方向与图片列表顺序直接决定结果，添加前先想好“从左到右”还是“从上到下”。生成的长图保持各原图比例，适合直接发到社交平台或文档里。</p></div>
+            <div class="lang-en"><h2>When to stitch images</h2>
+<p>Chat screenshots are messy sent one by one — a single long image shares far better; comparison panels, flow diagrams, and poster fragments all come together by merging images.</p>
+
+<h2>How the tool works</h2>
+<p>Open the <a href="../../tools/image-stitch/index.html">image stitcher</a>:</p>
+<ol>
+    <li><strong>Add images</strong> — queue the pictures in order.</li>
+    <li><strong>Pick the direction</strong> — horizontal stacking side by side, or vertical top to bottom.</li>
+    <li><strong>Set the gap</strong> — optionally leave a pixel margin between pictures.</li>
+    <li><strong>Stitch and download</strong> — merge into one long image in a click.</li>
+</ol>
+
+<h2>A tip</h2>
+<p>Direction and ordering decide the result, so decide "left to right" or "top to bottom" before you add files. The combined image keeps each source's proportions — ready for social posts or documents.</p></div>
+        </article>
+        <div class="post-cta">
+            <a class="btn btn-primary" href="../../tools/image-stitch/index.html"><span class="lang-en">Open the tool</span><span class="lang-zh">打开工具</span></a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand-col">
+                <div class="footer-brand"><span data-i18n="siteName">ToolBox</span></div>
+                <p class="footer-tagline" data-i18n="footer">All processing happens in your browser</p>
+                <div class="footer-friend">
+                    <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                    <a href="#" aria-label="RSS"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footerTools">Popular tools</h4>
+                <a href="../../tools/json/index.html">JSON</a>
+                <a href="../../tools/base64/index.html">Base64</a>
+                <a href="../../tools/url/index.html">URL</a>
+                <a href="../../tools/qr/index.html">QR</a>
+                <a href="../../tools/uuid/index.html">UUID</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="friendsTitle">Friends</h4>
+                <a href="#">Dasiwo</a>
+                <a href="#">Eine</a>
+                <a href="#">MDN</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="legal">Legal</h4>
+                <a href="#" data-i18n="privacy">Privacy Policy</a>
+                <a href="#" data-i18n="terms">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">© 2026 ToolBox</p>
+        </div>
+    </div>
+</footer>
+<div class="toast" id="toast"></div>
+<div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="drawer-head">
+            <a class="brand" href="../../index.html">
+                <span data-i18n="siteName">ToolBox</span>
+            </a>
+            <button class="drawer-close" data-close-drawer>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="drawer-foot" data-i18n="footer"></div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<h2>The pain of regular expressions</h2>
+<p>Regex reads fine but often misbehaves at runtime — boundary cases, greedy matching, or a missed escape quietly break the result. Setting up a test harness over and over wastes a lot of time.</p>
+
+<h2>How the tester works</h2>
+<p>Open the <a href="../../tools/regex/index.html">regex tester</a>:</p>
+<ul>
+    <li><strong>Pattern</strong> — type your expression.</li>
+    <li><strong>Test string</strong> — paste the text you want to match against.</li>
+    <li><strong>Flags</strong> — enable the usual options like global and case-insensitive.</li>
+    <li><strong>Live results</strong> — matches appear instantly as you type, with the captures shown.</li>
+</ul>
+
+<h2>Tips</h2>
+<p>Start with global plus case-insensitive to see overall matches, then tighten the pattern. When a match that should hit does not, suspect a missing escape like <code>\.</code> or greediness eating too much. Validate here, then drop the pattern into your code with confidence.</p>

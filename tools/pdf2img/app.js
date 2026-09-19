@@ -6,7 +6,7 @@ if (!window.pdfjsLib) {
         el.classList.add("show");
     }
 }
-pdfjsLib.GlobalWorkerOptions.workerSrc = "../../vendor/pdf.worker.min.js?v=20260919u";
+pdfjsLib.GlobalWorkerOptions.workerSrc = "../../vendor/pdf.worker.min.js?v=20260919v";
 
 const file = document.getElementById("file");
 const widthRange = document.getElementById("width");

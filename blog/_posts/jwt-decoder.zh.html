@@ -1,0 +1,14 @@
+<h2>JWT 长什么样</h2>
+<p>JWT（JSON Web Token）是一串形如 <code>eyJhbGci...签名</code> 的字符串，由三段 Base64 组成：标头（header）、载荷（payload）和签名（signature），登录态、接口鉴权里随处可见。</p>
+
+<h2>这个工具能解析什么</h2>
+<p>打开 <a href="../../tools/jwt/index.html">JWT 解码器</a>，粘贴 Token 即可看到：</p>
+<ul>
+    <li><strong>Header</strong>：使用的加密算法（如 HS256）与类型信息。</li>
+    <li><strong>Payload</strong>：业务字段，包括标准字段与自定义字段。</li>
+    <li><strong>过期时间（exp）</strong>：解析出具体的有效期，判断是否即将失效。</li>
+</ul>
+<p>页面上还内置了示例 Token，一键载入快速上手。</p>
+
+<h2>安全提醒</h2>
+<p>解码只是把 Base64 还原成明文——它不校验签名，也无法“解密”。签名是否有效需要用对应的密钥在服务端验证；若载荷里有敏感信息，本工具同样会在本地解析，不会上传。</p>

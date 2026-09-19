@@ -37,5 +37,369 @@
       "zh": "URL 编解码在线工具指南：为什么链接里要转义、空格与中文会被处理成什么，以及 encodeURI 与 encodeURIComponent 的区别。",
       "en": "A guide to URL encoding: why links must escape special characters, how spaces and Chinese text are encoded, and when to use encodeURI vs encodeURIComponent."
     }
+  },
+  {
+    "slug": "pdf-to-word",
+    "tool": "pdf-to-word",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "PDF 转 Word：可编辑文字，还是整页图片保真？",
+      "en": "Convert PDF to Word: Editable Text vs Pixel-Perfect Pages"
+    },
+    "desc": {
+      "zh": "免费的在线 PDF 转 Word 工具指南：可编辑文本模式适合需要修改内容，整页图片模式完美保留原版式；全程在浏览器本地转换，不收费、不上传、不限页数。",
+      "en": "A guide to converting PDF to Word: editable text mode for content you will modify, or page-image mode that preserves the exact layout — free, fully local, no uploads, no page limits."
+    }
+  },
+  {
+    "slug": "word-to-pdf",
+    "tool": "word-to-pdf",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "Word 转 PDF：不装 Office 也能把 .docx 转成 PDF",
+      "en": "Convert Word to PDF Without Installing Office"
+    },
+    "desc": {
+      "zh": "免费的 Word 转 PDF 在线教程：在浏览器里预览 .docx，再用“另存为 PDF”导出，排版原样保留；无需安装 Office，文件全程留在本地，不上传任何内容。",
+      "en": "A free guide to converting Word documents to PDF: preview any .docx right in the browser, then export it with \"Save as PDF\". Layout stays intact, no Office install needed, and nothing is ever uploaded."
+    }
+  },
+  {
+    "slug": "pdf2img",
+    "tool": "pdf2img",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "PDF 转图片：把每一页导出为高清 PNG",
+      "en": "Convert PDF to Images: Export Every Page as a PNG"
+    },
+    "desc": {
+      "zh": "免费的 PDF 转图片教程：自定义输出宽度（400–3200px）把每页渲染成清晰 PNG，可单张下载或一键打包 ZIP；全程在浏览器本地处理，不加水印、不限页数。",
+      "en": "A free guide to turning PDF pages into images: pick the output width from 400 to 3200 px, render each page as a crisp PNG, and download images one by one or as a ZIP — all locally, no watermarks."
+    }
+  },
+  {
+    "slug": "html2md",
+    "tool": "html2md",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "HTML 转 Markdown：网页片段一键变成干净的 Markdown",
+      "en": "HTML to Markdown: Turn Web Snippets into Clean Markdown"
+    },
+    "desc": {
+      "zh": "在线 HTML 转 Markdown 工具：把任意网页、富文本或邮件片段一键转成干净的 Markdown 源码，保留代码块与 GFM 表格；纯浏览器本地转换，免费、无需登录。",
+      "en": "A free HTML-to-Markdown converter: paste any web page, rich-text, or email snippet and get clean Markdown in one click, with code blocks and GFM tables preserved — entirely in your browser."
+    }
+  },
+  {
+    "slug": "camera-test",
+    "tool": "camera-test",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "在线摄像头测试：检测设备、分辨率与闪光灯",
+      "en": "Camera Test Online: Check Devices, Resolutions, and Flash"
+    },
+    "desc": {
+      "zh": "免费的在线摄像头测试工具：列出检测到的摄像头及其支持的分辨率，实时预览画面，还能测试手机闪光灯；画面全程在本地处理，不会上传到任何服务器。",
+      "en": "A free online webcam checker: list detected cameras and the resolutions they support, preview the live feed, and test your phone's flashlight — the video never leaves your device."
+    }
+  },
+  {
+    "slug": "keyboard-test",
+    "tool": "keyboard-test",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "在线键盘测试：检测每个按键、冲突与按压力",
+      "en": "Keyboard Test Online: Check Every Key, Rollover, and Hold"
+    },
+    "desc": {
+      "zh": "免费的在线键盘测试工具：实时点亮每个按键，检测按键冲突（rollover）、按住状态与原始事件参数（key、code、keyCode），网页即开即用，无需安装任何软件。",
+      "en": "A free in-browser keyboard tester: keys light up as you press them, with rollover and hold-state detection plus raw key, code, and keyCode events — no software to install."
+    }
+  },
+  {
+    "slug": "timestamp-tool",
+    "tool": "timestamp",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "时间戳转换：Unix 时间戳与日期互转在线工具",
+      "en": "Timestamp Converter: Unix Timestamp and Date, Both Ways"
+    },
+    "desc": {
+      "zh": "免费的 Unix 时间戳在线转换工具：时间戳转日期、日期转时间戳，支持一键取当前时间戳并快速复制，秒级换算，适合调试接口与数据处理。",
+      "en": "A free Unix timestamp converter: turn timestamps into dates and dates into timestamps, grab the current time with one click, and copy instantly — handy for API debugging and data work."
+    }
+  },
+  {
+    "slug": "uuid-generator",
+    "tool": "uuid",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "UUID 生成器：批量生成标准 UUID v4 标识符",
+      "en": "UUID Generator: Batch Standard UUID v4 Identifiers"
+    },
+    "desc": {
+      "zh": "在线 UUID 生成器：批量生成标准 UUID v4，数量自定义，一键复制全部或点选单个复制，适合需求记录ID、订单号等场景。",
+      "en": "An online UUID generator: batch standard UUID v4 identifiers, copy all at once or click any single value — perfect for record IDs, order numbers, and unique tokens."
+    }
+  },
+  {
+    "slug": "hash-generator",
+    "tool": "hash",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "哈希值生成：MD5、SHA-256、SHA-512 在线计算",
+      "en": "Hash Generator: MD5, SHA-256, and SHA-512 Online"
+    },
+    "desc": {
+      "zh": "免费的在线哈希生成工具：对任意文本一键计算 MD5、SHA-256、SHA-512 摘要，用于数据完整性校验与指纹比对，结果支持一键复制。",
+      "en": "A free online hash generator: compute MD5, SHA-256, and SHA-512 digests of any text for integrity checks and fingerprinting — copy any result in one click."
+    }
+  },
+  {
+    "slug": "qr-generator",
+    "tool": "qr",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "二维码生成器：网址、文本一键生成高清二维码",
+      "en": "QR Code Generator: High-Res QR from Links and Text"
+    },
+    "desc": {
+      "zh": "在线二维码生成器：输入网址或任意文本，自定义尺寸与纠错等级，生成高清 PNG 二维码并可下载，适合分享链接、WiFi、名片等。",
+      "en": "An online QR code generator: type a link or any text, choose the size and error-correction level, then download a high-resolution PNG — great for links, Wi-Fi, and business cards."
+    }
+  },
+  {
+    "slug": "password-generator",
+    "tool": "password",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "强密码生成器：长度、字符集自由定制",
+      "en": "Strong Password Generator with Custom Character Sets"
+    },
+    "desc": {
+      "zh": "在线强密码生成器：自定义密码长度与字符集（大小写、数字、符号），一键生成高强度随机密码并复制，全程在浏览器本地生成，不会上传。",
+      "en": "An online strong password generator: set the length and character set — uppercase, lowercase, digits, and symbols — then generate and copy a high-entropy password instantly, fully local."
+    }
+  },
+  {
+    "slug": "regex-tester",
+    "tool": "regex",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "正则表达式测试：在线调试、实时匹配高亮",
+      "en": "Regex Tester: Live Pattern Matching Online"
+    },
+    "desc": {
+      "zh": "在线正则表达式测试工具：输入正则与目标文本，实时显示匹配结果与常用 flag（全局、忽略大小写等），无需环境即可快速调试规则。",
+      "en": "An online regex tester: enter a pattern and a string, see matches update live with common flags like global and case-insensitive — debug rules without any setup."
+    }
+  },
+  {
+    "slug": "text-diff",
+    "tool": "text-diff",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "文本差异对比：两个文本差异一目了然",
+      "en": "Text Diff: Compare Two Texts Side by Side"
+    },
+    "desc": {
+      "zh": "免费的在线文本对比工具：粘贴原文与修改后的文本，工具自动高亮增删与变化部分，适合审稿、校对、版本对比与配置核对。",
+      "en": "A free online text comparison tool: paste the old and new versions and see additions and changes highlighted instantly — for reviewing copy, versions, and configs."
+    }
+  },
+  {
+    "slug": "text-counter",
+    "tool": "stats",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "字数统计：字符、单词、行数、中文字数一键统计",
+      "en": "Text Counter: Characters, Words, Lines, and CJK Count"
+    },
+    "desc": {
+      "zh": "免费的在线字数统计工具：实时统计字符数（含/不含空格）、单词数、行数、字节数以及中文字符数，符合投稿与内容平台的统计习惯。",
+      "en": "A free online text counter: live counts of characters with and without spaces, words, lines, bytes, and CJK characters — aligned with how content platforms count."
+    }
+  },
+  {
+    "slug": "lorem-ipsum",
+    "tool": "lorem",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "Lorem Ipsum 生成器：假文排版占位文本生成",
+      "en": "Lorem Ipsum Generator: Placeholder Text for Layouts"
+    },
+    "desc": {
+      "zh": "在线 Lorem Ipsum 生成器：选择语言与每段句数，一键生成段落假文用于排版占位，也可输出中文替换文本，随时复制使用。",
+      "en": "An online Lorem Ipsum generator: pick a language and sentences per paragraph to produce placeholder text for layouts — or generate Chinese filler text, ready to copy."
+    }
+  },
+  {
+    "slug": "morse-code",
+    "tool": "morse",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "摩斯密码转换：文本与摩斯码双向互转",
+      "en": "Morse Code Converter: Text to Morse and Back"
+    },
+    "desc": {
+      "zh": "在线摩斯密码转换工具：支持文本转摩斯码、摩斯码转文本双向互转，带符号表对照与使用说明，适合学习摩斯码或快速编解码。",
+      "en": "An online Morse code converter: translate text to Morse and Morse back to text, with a symbol reference — ideal for learning Morse or quick encoding and decoding."
+    }
+  },
+  {
+    "slug": "color-converter",
+    "tool": "color",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "颜色转换：HEX、RGB、HSL 在线互转与预览",
+      "en": "Color Converter: HEX, RGB, HSL, and Preview"
+    },
+    "desc": {
+      "zh": "在线颜色转换工具：在 HEX、RGB、HSL 之间实时互转并预览色块，粘贴网页取色即可同步看到三种写法，适合前端与设计取色。",
+      "en": "An online color converter: switch between HEX, RGB, and HSL in real time with a live swatch — copy any color value from web pages and see all three formats instantly."
+    }
+  },
+  {
+    "slug": "jwt-decoder",
+    "tool": "jwt",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "JWT 解码：在线解析 Token 的标头与载荷",
+      "en": "JWT Decoder: Inspect Token Header and Payload Online"
+    },
+    "desc": {
+      "zh": "在线 JWT 解码工具：粘贴 JSON Web Token，一键解析标头（header）、载荷（payload）与过期时间（exp）等信息，内置示例可快速上手。",
+      "en": "An online JWT decoder: paste any JSON Web Token and inspect the header, payload, and expiry (exp) in one click — a built-in sample makes it easy to try."
+    }
+  },
+  {
+    "slug": "bulk-rename",
+    "tool": "rename",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "批量重命名：前缀加号或序号规则批量生成新文件名",
+      "en": "Bulk Rename: Add Prefixes or Sequential Numbers to File Names"
+    },
+    "desc": {
+      "zh": "在线批量重命名工具：把一行一个的文件名按规则重新生成——添加前缀后缀，或按起始数字与补零位数批量编号，结果一键复制。",
+      "en": "An online bulk rename tool: feed it one file name per line and rebuild them with custom rules — add a prefix and suffix, or renumber sequentially with zero padding."
+    }
+  },
+  {
+    "slug": "image-convert",
+    "tool": "image-convert",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "图片格式转换：JPEG、PNG、WebP、AVIF 互转",
+      "en": "Image Format Converter: JPEG, PNG, WebP, AVIF"
+    },
+    "desc": {
+      "zh": "在线图片格式转换工具：在 JPEG、PNG、WebP、AVIF、BMP 之间互转，可调画质，转换全在浏览器本地完成，不上传图片、不加限制。",
+      "en": "An online image converter: switch between JPEG, PNG, WebP, AVIF, and BMP with adjustable quality — everything happens locally, no uploads, no limits."
+    }
+  },
+  {
+    "slug": "image-compress",
+    "tool": "image-compress",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "图片压缩：在线减小图片体积、保留清晰度",
+      "en": "Image Compress: Shrink File Size, Keep Quality"
+    },
+    "desc": {
+      "zh": "免费的在线图片压缩工具：拖入图片即可压缩，实时对比原图与新图大小和节省百分比，可调画质平衡体积与清晰度，全程本地处理。",
+      "en": "A free online image compressor: drop an image, tune the quality, and see the saved percentage in real time — balance file size against clarity, fully local."
+    }
+  },
+  {
+    "slug": "image-resize",
+    "tool": "image-resize",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "图片缩放：按百分比或指定宽度在线调整尺寸",
+      "en": "Image Resize: Scale by Percent or Target Width"
+    },
+    "desc": {
+      "zh": "在线图片缩放工具：按百分比或指定宽度一键调整图片尺寸，保持宽高比不变形，处理结果可下载 PNG，适合压缩上传与网页配图。",
+      "en": "An online image resizer: scale by percentage or a fixed width while keeping the aspect ratio, then download the result — ideal for uploads and web graphics."
+    }
+  },
+  {
+    "slug": "image-crop",
+    "tool": "image-crop",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "图片裁剪：在线框选区域并导出裁剪结果",
+      "en": "Image Crop: Select a Region and Export It"
+    },
+    "desc": {
+      "zh": "在线图片裁剪工具：上传图片后拖动框选需要的区域，一键裁剪并下载结果，裁剪全程在浏览器本地完成，适合头像、配图、去边等场景。",
+      "en": "An online image cropper: upload a picture, drag to select the region you need, and export the crop right away — all local, great for avatars, photos, and trimming edges."
+    }
+  },
+  {
+    "slug": "image-flip",
+    "tool": "image-flip",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "图片翻转旋转：水平翻转、垂直翻转与角度旋转",
+      "en": "Image Flip and Rotate: Mirror and Turn Free"
+    },
+    "desc": {
+      "zh": "在线图片翻转旋转工具：支持水平/垂直翻转、双向镜像以及按角度旋转，一键处理后下载结果，适合修正拍摄方向或制作镜像素材。",
+      "en": "An online flip and rotate tool: mirror images horizontally or vertically, and rotate them by any angle — process and download in one click for corrected or mirrored material."
+    }
+  },
+  {
+    "slug": "image-slice",
+    "tool": "image-slice",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "图片切片：按行列把一张图切成多张",
+      "en": "Image Slice: Cut One Image into a Row-Column Grid"
+    },
+    "desc": {
+      "zh": "在线图片切片工具：设置行数与列数，把一张大图均匀切成多张小图并打包下载，适合九宫格拼图、地图分块、游戏素材拆图。",
+      "en": "An online image slicer: set the number of rows and columns to cut one large image into evenly sized pieces and download them together — perfect for grid posts and split assets."
+    }
+  },
+  {
+    "slug": "image-stitch",
+    "tool": "image-stitch",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "图片拼接：多张图片横排或竖排合成一张",
+      "en": "Image Stitch: Merge Images Horizontally or Vertically"
+    },
+    "desc": {
+      "zh": "在线图片拼接工具：多张图片按水平或垂直方向拼接成一张长图，可设置间隙间距，适合截图拼接、对比图与海报碎片合成。",
+      "en": "An online image stitcher: merge multiple images into one long picture, horizontally or vertically, with an adjustable gap — great for screenshot threads and comparison panels."
+    }
+  },
+  {
+    "slug": "circle-crop",
+    "tool": "image-circular-crop",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "圆形裁剪：一键把图片裁成圆形（头像）",
+      "en": "Circle Crop: Cut Images into Circles for Avatars"
+    },
+    "desc": {
+      "zh": "在线圆形裁剪工具：把任意图片裁成圆形，支持设置输出尺寸与填充模式（等比适配/拉扯铺满），一键生成透明背景的圆形 PNG，适合做头像。",
+      "en": "An online circle cropper: turn any image into a circle with a chosen output size and fit mode, then download a transparent-background PNG — perfect for profile pictures."
+    }
+  },
+  {
+    "slug": "gif-maker",
+    "tool": "gif-maker",
+    "date": "2026-09-19",
+    "title": {
+      "zh": "GIF 制作：多张图片合成动图在线生成",
+      "en": "GIF Maker: Turn Multiple Images into an Animated GIF"
+    },
+    "desc": {
+      "zh": "在线 GIF 制作工具：选择多张图片，设置输出尺寸与每帧延迟，一键合成并下载 GIF 动图，适合表情包、演示轮播与简单动画。",
+      "en": "An online GIF maker: add several images, set the output size and frame delay, then generate and download an animated GIF — for memes, slideshows, and simple animations."
+    }
   }
 ]

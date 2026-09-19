@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){try{
+  var t=localStorage.getItem("toolbox-theme");
+  var l=localStorage.getItem("toolbox-lang");
+  var d=document.documentElement;
+  if(t==="dark"){d.setAttribute("data-theme","dark")}
+  if(l==="en"||l==="zh"){d.setAttribute("lang",l)}
+  if(l!=="en"){d.classList.add("i18n-pending")}
+}catch(e){}})();
+setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
+</script>
+<title>Lorem Ipsum 生成器：假文排版占位文本生成 · ToolBox</title>
+<meta name="description" content="An online Lorem Ipsum generator: pick a language and sentences per paragraph to produce placeholder text for layouts — or generate Chinese filler text, ready to copy.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
+<script src="../../core.js?v=20260919v"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260919v">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="../../index.html">
+            <span data-i18n="siteName">ToolBox</span>
+        </a>
+        <nav class="site-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button id="langToggle" class="icon-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+                <span class="btn-label">English</span>
+            </button>
+            <button id="themeToggle" class="icon-btn"><span id="themeIcon"></span></button>
+            <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" data-i18n-title="menu" title="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+                <span class="btn-label"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="tool-page">
+    <div class="tool-head">
+        <nav class="breadcrumbs">
+            <a href="../../blog/index.html" data-i18n="blog">Blog</a>
+            <span class="crumb-sep">›</span>
+            <span class="lang-zh">Lorem Ipsum 生成器：假文排版占位文本生成</span><span class="lang-en">Lorem Ipsum Generator: Placeholder Text for Layouts</span>
+        </nav>
+        <h1 class="lang-zh">Lorem Ipsum 生成器：假文排版占位文本生成</h1>
+        <h1 class="lang-en">Lorem Ipsum Generator: Placeholder Text for Layouts</h1>
+        <p class="post-meta">ToolBox Blog · 2026-09-19</p>
+    </div>
+
+    <section class="section">
+        <article class="post-body">
+            <div class="lang-zh"><h2>占位文本有什么用处</h2>
+<p>设计稿、原型、排版演示、模板示例——在真实内容没到位之前，先用占位文本把版面撑起来，让客户和团队看到“大致效果”。Lorem Ipsum 就是最常用的占位假文。</p>
+
+<h2>这个工具怎么用</h2>
+<p>打开 <a href="../../tools/lorem/index.html">Lorem 生成器</a>：</p>
+<ul>
+    <li><strong>选择语言</strong>：默认生成经典的拉丁假文；想要更贴近中文审阅效果，也可以生成中文占位文本。</li>
+    <li><strong>每段句数</strong>：控制每段文字的密度。</li>
+    <li><strong>生成数量</strong>：设置要生成的段落数。</li>
+    <li><strong>生成并复制</strong>：确认密度合适后一键复制，粘到页面或文档里。</li>
+</ul>
+
+<h2>使用建议</h2>
+<p>拉丁假文不干扰阅读注意，适合纯排版；中文占位更接近真实审阅节奏。先掉一两句话测试一下段落密度，再批量生成，避免整页文字过多或过空。</p></div>
+            <div class="lang-en"><h2>Why placeholder text</h2>
+<p>Designs, prototypes, layout demos, and templates all need filler before real content arrives — it shows the "general look" to clients and teams. Lorem Ipsum is the classic choice.</p>
+
+<h2>How the generator works</h2>
+<p>Open the <a href="../../tools/lorem/index.html">Lorem generator</a>:</p>
+<ul>
+    <li><strong>Language</strong> — classic Latin placeholder by default; switch to Chinese filler text when reviews feel more natural that way.</li>
+    <li><strong>Sentences per paragraph</strong> — controls how dense each block reads.</li>
+    <li><strong>Paragraph count</strong> — how many blocks to generate.</li>
+    <li><strong>Generate and copy</strong> — once the density looks right, copy it into your page or document.</li>
+</ul>
+
+<h2>Usage tips</h2>
+<p>Latin filler keeps the eye on layout; Chinese filler mimics real review pacing. Generate one or two sentences first to gauge density, then batch — that avoids overflow or a page that looks thin.</p></div>
+        </article>
+        <div class="post-cta">
+            <a class="btn btn-primary" href="../../tools/lorem/index.html"><span class="lang-en">Open the tool</span><span class="lang-zh">打开工具</span></a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand-col">
+                <div class="footer-brand"><span data-i18n="siteName">ToolBox</span></div>
+                <p class="footer-tagline" data-i18n="footer">All processing happens in your browser</p>
+                <div class="footer-friend">
+                    <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                    <a href="#" aria-label="RSS"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footerTools">Popular tools</h4>
+                <a href="../../tools/json/index.html">JSON</a>
+                <a href="../../tools/base64/index.html">Base64</a>
+                <a href="../../tools/url/index.html">URL</a>
+                <a href="../../tools/qr/index.html">QR</a>
+                <a href="../../tools/uuid/index.html">UUID</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="friendsTitle">Friends</h4>
+                <a href="#">Dasiwo</a>
+                <a href="#">Eine</a>
+                <a href="#">MDN</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="legal">Legal</h4>
+                <a href="#" data-i18n="privacy">Privacy Policy</a>
+                <a href="#" data-i18n="terms">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">© 2026 ToolBox</p>
+        </div>
+    </div>
+</footer>
+<div class="toast" id="toast"></div>
+<div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="drawer-head">
+            <a class="brand" href="../../index.html">
+                <span data-i18n="siteName">ToolBox</span>
+            </a>
+            <button class="drawer-close" data-close-drawer>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="drawer-foot" data-i18n="footer"></div>
+    </div>
+</div>
+
+</body>
+</html>

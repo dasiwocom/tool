@@ -1,0 +1,13 @@
+<h2>What hashes are for</h2>
+<p>A hash (digest) maps content of any size to a fixed-length "fingerprint". The same content always hashes identically, and any tiny change produces a completely different result — which is why hashes power integrity checks, consistency comparisons, and one-way summaries of sensitive fields.</p>
+
+<h2>Algorithms included</h2>
+<p>Open the <a href="../../tools/hash/index.html">hash generator</a>, type any text, and you get all three at once:</p>
+<ul>
+    <li><strong>MD5</strong> — 32 hex characters, fast and familiar, but no longer safe: use it only for checksums.</li>
+    <li><strong>SHA-256</strong> — 64 hex characters, the everyday secure choice behind certificates, signatures, and download verification.</li>
+    <li><strong>SHA-512</strong> — a longer, stronger digest for scenarios where speed matters less.</li>
+</ul>
+
+<h2>Verifying a file</h2>
+<p>Downloading software with a published SHA-256? Run the downloaded content through the tool (or verify the published digest of your text form) — a match means the file is intact and untampered. Everything is computed locally; nothing is uploaded.</p>

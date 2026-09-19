@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+(function(){try{
+  var t=localStorage.getItem("toolbox-theme");
+  var l=localStorage.getItem("toolbox-lang");
+  var d=document.documentElement;
+  if(t==="dark"){d.setAttribute("data-theme","dark")}
+  if(l==="en"||l==="zh"){d.setAttribute("lang",l)}
+  if(l!=="en"){d.classList.add("i18n-pending")}
+}catch(e){}})();
+setTimeout(function(){try{document.documentElement.classList.remove("i18n-pending")}catch(e){}},1500);
+</script>
+<title>Word 转 PDF：不装 Office 也能把 .docx 转成 PDF · ToolBox</title>
+<meta name="description" content="A free guide to converting Word documents to PDF: preview any .docx right in the browser, then export it with "Save as PDF". Layout stays intact, no Office install needed, and nothing is ever uploaded.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
+<script src="../../core.js?v=20260919v"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260919v">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="header-inner">
+        <a class="brand" href="../../index.html">
+            <span data-i18n="siteName">ToolBox</span>
+        </a>
+        <nav class="site-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <button id="langToggle" class="icon-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3c2.5 2.6 3.8 5.7 3.8 9S14.5 18.4 12 21c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
+                <span class="btn-label">English</span>
+            </button>
+            <button id="themeToggle" class="icon-btn"><span id="themeIcon"></span></button>
+            <button id="menuToggle" class="icon-btn menu-btn" aria-label="Menu" aria-expanded="false" data-i18n-title="menu" title="Menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+                <span class="btn-label"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main class="tool-page">
+    <div class="tool-head">
+        <nav class="breadcrumbs">
+            <a href="../../blog/index.html" data-i18n="blog">Blog</a>
+            <span class="crumb-sep">›</span>
+            <span class="lang-zh">Word 转 PDF：不装 Office 也能把 .docx 转成 PDF</span><span class="lang-en">Convert Word to PDF Without Installing Office</span>
+        </nav>
+        <h1 class="lang-zh">Word 转 PDF：不装 Office 也能把 .docx 转成 PDF</h1>
+        <h1 class="lang-en">Convert Word to PDF Without Installing Office</h1>
+        <p class="post-meta">ToolBox Blog · 2026-09-19</p>
+    </div>
+
+    <section class="section">
+        <article class="post-body">
+            <div class="lang-zh"><h2>怎么在浏览器里把 Word 转成 PDF</h2>
+<p>打开 <a href="../../tools/word-to-pdf/index.html">Word 转 PDF 工具</a>，选一个 .docx 文件，接下来只有两步：</p>
+<ol>
+    <li><strong>出现预览</strong>：工具直接在浏览器里解析文件内容，标题、列表、表格、图片都会按原文排版渲染出来。</li>
+    <li><strong>点击“另存为 PDF…”</strong>：浏览器会弹出打印窗口，把目标打印机选成“另存为 PDF”，就能得到一个排版与预览一致的 PDF 文件。</li>
+</ol>
+
+<h2>为什么推荐这种转换方式</h2>
+<ul>
+    <li><strong>不用装 Office</strong>：不需要 Word、WPS 或任何桌面软件，有浏览器的设备就能转。</li>
+    <li><strong>排版原样保留</strong>：PDF 由这份真实排版渲染而来，字体、间距、分页都和你屏幕里看到的一致。</li>
+    <li><strong>生成真正的 PDF</strong>：不是把内容重新抄一遍，而是按“打印页面”输出，交给别人、直接打印都可靠。</li>
+</ul>
+
+<h2>关于格式与隐私</h2>
+<p>工具支持标准 .docx 文件。如果你手里是老版 .doc 格式，先用 Office 或 WPS 另存为 .docx 再转换。</p>
+<p>转换全程在你的浏览器本地完成，文件内容不会上传到任何服务器，可以放心处理合同、简历这类敏感文档。</p></div>
+            <div class="lang-en"><h2>How to convert a Word document to PDF in the browser</h2>
+<p>Open the <a href="../../tools/word-to-pdf/index.html">Word to PDF converter</a>, choose a .docx file, and you are only two steps away:</p>
+<ol>
+    <li><strong>A preview appears.</strong> The tool parses the document right in the browser and renders headings, lists, tables, and images with their original formatting.</li>
+    <li><strong>Click "Save as PDF…".</strong> The browser opens its print dialog — pick "Save as PDF" as the destination printer, and you get a PDF that matches the preview exactly.</li>
+</ol>
+
+<h2>Why convert this way</h2>
+<ul>
+    <li><strong>No Office required</strong> — no Word, WPS, or desktop software; any device with a browser can do it.</li>
+    <li><strong>Layout stays intact</strong> — the PDF is rendered from the real layout, so fonts, spacing, and page breaks match what you see on screen.</li>
+    <li><strong>A genuine PDF output</strong> — content is printed as pages, not recreated, so the result is dependable when shared or printed.</li>
+</ul>
+
+<h2>Format and privacy</h2>
+<p>The tool works with standard .docx files. For legacy .doc files, save them as .docx in Office or WPS first.</p>
+<p>Everything happens locally in your browser — your document is never uploaded, so it is safe to convert sensitive files like contracts or résumés here.</p></div>
+        </article>
+        <div class="post-cta">
+            <a class="btn btn-primary" href="../../tools/word-to-pdf/index.html"><span class="lang-en">Open the tool</span><span class="lang-zh">打开工具</span></a>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-grid">
+            <div class="footer-col footer-brand-col">
+                <div class="footer-brand"><span data-i18n="siteName">ToolBox</span></div>
+                <p class="footer-tagline" data-i18n="footer">All processing happens in your browser</p>
+                <div class="footer-friend">
+                    <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></a>
+                    <a href="#" aria-label="Twitter"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+                    <a href="#" aria-label="RSS"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 0 1 9 9M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1"/></svg></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footerTools">Popular tools</h4>
+                <a href="../../tools/json/index.html">JSON</a>
+                <a href="../../tools/base64/index.html">Base64</a>
+                <a href="../../tools/url/index.html">URL</a>
+                <a href="../../tools/qr/index.html">QR</a>
+                <a href="../../tools/uuid/index.html">UUID</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="friendsTitle">Friends</h4>
+                <a href="#">Dasiwo</a>
+                <a href="#">Eine</a>
+                <a href="#">MDN</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="legal">Legal</h4>
+                <a href="#" data-i18n="privacy">Privacy Policy</a>
+                <a href="#" data-i18n="terms">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-note">© 2026 ToolBox</p>
+        </div>
+    </div>
+</footer>
+<div class="toast" id="toast"></div>
+<div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+        <div class="drawer-head">
+            <a class="brand" href="../../index.html">
+                <span data-i18n="siteName">ToolBox</span>
+            </a>
+            <button class="drawer-close" data-close-drawer>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <a href="../../index.html" data-i18n="home">Home</a>
+            <a href="../../changelog/index.html" data-i18n="changelog">Changelog</a>
+            <a href="../../download/index.html" data-i18n="download">Download</a>
+            <a href="../../blog/index.html" class="active" data-i18n="blog">Blog</a>
+            <a href="../../contact/index.html" data-i18n="contact">Contact</a>
+        </nav>
+        <div class="drawer-foot" data-i18n="footer"></div>
+    </div>
+</div>
+
+</body>
+</html>

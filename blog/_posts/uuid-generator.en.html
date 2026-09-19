@@ -1,0 +1,13 @@
+<h2>What a UUID is</h2>
+<p>A UUID (v4) is a 128-bit unique identifier like <code>9f8c1d2e-...-4a5b</code>, virtually guaranteed not to repeat — the go-to for record IDs, order numbers, and task identifiers. Generating a few on demand beats inventing values by hand.</p>
+
+<h2>How the generator works</h2>
+<p>Open the <a href="../../tools/uuid/index.html">UUID generator</a>, choose how many you need, and hit generate. Results appear as a standard-formatted list.</p>
+<ul>
+    <li><strong>Batch generation</strong> — produce any number of UUIDs you choose.</li>
+    <li><strong>Copy individually</strong> — click any single entry to copy just that one.</li>
+    <li><strong>Copy all</strong> — grab every generated UUID at once and paste it into code or a spreadsheet.</li>
+</ul>
+
+<h2>Notes</h2>
+<p>Version 4 is plenty for primary keys and order IDs. One caveat: do not rely on UUIDs for sorting — as random identifiers they carry no order, so add a separate time field if ordering matters.</p>

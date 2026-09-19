@@ -1,0 +1,13 @@
+<h2>什么时候需要把 HTML 转成 Markdown</h2>
+<p>从网页里复制带格式的文字，粘进编辑器常是一堆 <code>&lt;div&gt;</code>、<code>&lt;span&gt;</code> 和行内样式，又乱又难管。博客搬家、整理他人页面、把富文本邮件转成文本文档时尤其头疼。用 <a href="../../tools/html2md/index.html">HTML 转 Markdown 工具</a>，粘贴一段 HTML，瞬间得到干净的 Markdown。</p>
+
+<h2>转换规则</h2>
+<ul>
+    <li><strong>标题与段落</strong>：<code>&lt;h1&gt;–&lt;h6&gt;</code>、<code>&lt;p&gt;</code> 自动映射为 Markdown 的 <code>#</code> 标题与段落。</li>
+    <li><strong>代码块</strong>：<code>&lt;pre&gt;&lt;code&gt;</code> 转成带语言标注的围栏代码块，方便语法高亮。</li>
+    <li><strong>表格</strong>：直接生成 GFM 管道式表格，在 GitHub、Typora 等主流 Markdown 里都能正常渲染。</li>
+    <li><strong>链接、图片、列表、加粗斜体</strong>：全部转换为对应的 Markdown 语法，行内样式会被丢弃，输出是纯文本源码。</li>
+</ul>
+
+<h2>使用小技巧</h2>
+<p>不确定流程？点“示例”按钮，工具会填入一段测试 HTML，转换后对照输入输出，很快就能看懂映射关系。转换结果支持一键复制，可直接粘回编辑器。整个过程在浏览器本地进行，粘贴的任何内容都不会上传。</p>
