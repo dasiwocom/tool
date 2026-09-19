@@ -12,8 +12,8 @@
     --radius-lg: 22px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --theme-dur: 0s;      /* theme switch is insta-snapshot: fully in-frame */
-    --build: "20260919e"; /* visible build marker — bump on every deploy */
-    --badge-text: "v20260919e"; /* keep in sync with --build */
+    --build: "20260919g"; /* visible build marker — bump on every deploy */
+    --badge-text: "v20260919g"; /* keep in sync with --build */
 }
 
 [data-theme="light"] {
@@ -74,7 +74,7 @@
 /* ==========================================================
    Tool icon layers — keep SVGs off main layer so taps never repaint a flash
    ========================================================== */
-.icon-btn svg, .card-icon svg, .drawer-close svg, .brand-mark {
+.icon-btn svg, .card-icon svg, .drawer-close svg {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
@@ -160,19 +160,6 @@ button {
     text-decoration: none;
 }
 
-.brand-mark {
-    width: 24px;
-    height: 24px;
-    display: grid;
-    place-items: center;
-    background: var(--text);
-    color: var(--bg);
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    line-height: 1;
-}
-
 .brand:hover { opacity: 0.8; }
 
 .header-actions {
@@ -202,7 +189,7 @@ button {
 .icon-btn:hover { background: var(--surface-2); }
 .icon-btn:active { opacity: 0.7; }
 
-.icon-btn svg { width: 18px; height: 18px; stroke-width: 1.7; }
+.icon-btn svg { width: 18px; height: 18px; stroke-width: 1.8; }
 .icon-btn .btn-label { min-width: 36px; text-align: left; line-height: 1; }
 
 /* ==========================================================
