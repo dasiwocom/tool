@@ -21,7 +21,7 @@ import os
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BLOG = os.path.join(ROOT, "blog")
 POSTS = os.path.join(BLOG, "_posts")
-VERSION = "20260919v"
+VERSION = "20260919w"
 
 PRE = """<script>
 (function(){try{

@@ -12,8 +12,8 @@
     --radius-lg: 22px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --theme-dur: 0s;      /* theme switch is insta-snapshot: fully in-frame */
-    --build: "20260919v"; /* visible build marker — bump on every deploy */
-    --badge-text: "v20260919v"; /* keep in sync with --build */
+    --build: "20260919w"; /* visible build marker — bump on every deploy */
+    --badge-text: "v20260919w"; /* keep in sync with --build */
 }
 
 [data-theme="light"] {
@@ -526,6 +526,21 @@ input.output { font-family: var(--mono); font-size: 13px; }
     border-radius: 17px;
 }
 
+/* Secondary actions inside a button row match the primary button height */
+.btn-row .btn-sm {
+    height: 44px;
+    padding: 0 22px;
+    font-size: 15px;
+    border-radius: 22px;
+}
+.btn-row .btn-ghost {
+    height: 44px;
+    padding: 0 22px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 22px;
+}
+
 /* Segmented control */
 .segmented {
     display: inline-flex;
@@ -552,6 +567,16 @@ input.output { font-family: var(--mono); font-size: 13px; }
     background: var(--surface);
     color: var(--text);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Standalone segmented controls stretch to the section width with equal buttons */
+.section > .segmented {
+    display: flex;
+    width: 100%;
+}
+.section > .segmented button {
+    flex: 1 1 0;
+    white-space: nowrap;
 }
 
 /* Result panel */
