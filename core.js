@@ -88,7 +88,7 @@ const I18N = {
     imageCompress: { en: "Image Compress", zh: "图片压缩" },
     imageCompressDesc: { en: "Shrink image file size while keeping quality, tuning the balance on a slider", zh: "在画质与体积之间自由权衡，用滑块压缩图片的文件大小" },
     imageConvert: { en: "Image Convert", zh: "图片转格式" },
-    imageConvertDesc: { en: "Convert images between PNG, JPEG, WebP, AVIF, and BMP formats instantly", zh: "在 PNG、JPEG、WebP、AVIF、BMP 等多种格式间即时转换图片" },
+    imageConvertDesc: { en: "Convert images between PNG, JPEG, WebP, AVIF, BMP, and SVG formats instantly", zh: "在 PNG、JPEG、WebP、AVIF、BMP、SVG 等多种格式间即时转换图片" },
     imageSlice: { en: "Image Slice", zh: "图片切割" },
     imageSliceDesc: { en: "Slice one image into an evenly sized grid of tiles for assets or sprites", zh: "把一张图按均匀网格切成多块小图，适合制作素材与雪碧图" },
     sliceCols: { en: "Columns", zh: "列数" },

@@ -16,8 +16,8 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 </script>
 <title>Image Convert · ToolBox</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
-<script src="../../core.js?v=20260919w"></script>
-<link rel="stylesheet" href="../../styles.css?v=20260919w">
+<script src="../../core.js?v=20260919x"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260919x">
 </head>
 <body>
 
@@ -55,7 +55,8 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 
     <div class="section">
         <div class="section-label" data-i18n="chooseImage">Choose an image</div>
-        <input type="file" id="file" accept="image/*,image/webp" class="code" style="font-size:16px;">
+        <input type="file" id="file" accept="image/*,image/svg+xml" multiple class="code" style="font-size:16px;">
+        <p class="size-info" id="fileList" style="margin-top:10px;"></p>
 
         <div class="section-label" style="margin-top:18px;" data-i18n="outputFormat">Output format</div>
         <div class="range-row">
@@ -65,6 +66,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
                 <option value="image/webp">WebP</option>
                 <option value="image/avif">AVIF</option>
                 <option value="image/bmp">BMP</option>
+                <option value="image/svg+xml">SVG</option>
             </select>
         </div>
 
@@ -81,15 +83,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 
     <div class="section" id="result" hidden>
         <div class="section-label" data-i18n="toolResult">Result</div>
-        <div class="preview" style="justify-content:center; display:flex; margin-bottom:16px;">
-            <img id="preview" alt="" style="max-width:100%; max-height:420px;" hidden>
-        </div>
-        <div class="stat-row" style="display:flex; gap:24px; flex-wrap:wrap; margin-bottom:16px;">
-            <span><span class="stat-value" id="sizeInfo">–</span> <span class="hint" data-i18n="newSize">Converted</span></span>
-        </div>
-        <div class="btn-row">
-            <a class="btn btn-primary" id="download" download="converted.png" data-i18n="download">Download</a>
-        </div>
+        <div id="resultGrid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:16px; margin-bottom:16px;"></div>
     </div>
 </main>
 
@@ -153,6 +147,6 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
     </div>
 </div>
 
-<script src="app.js?v=20260919w"></script>
+<script src="app.js?v=20260919x"></script>
 </body>
 </html>
