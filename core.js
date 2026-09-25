@@ -100,7 +100,7 @@ const I18N = {
     cropBtn: { en: "Crop", zh: "裁剪" },
     downloadAll: { en: "Download all", zh: "全部下载" },
     rename: { en: "Bulk Rename", zh: "批量重命名" },
-    renameDesc: { en: "Rename files in batches with a rule", zh: "按规则批量重命名文件" },
+    renameDesc: { en: "Select files, apply a rule, and download the renamed copies", zh: "选择文件，按规则批量生成新文件名并下载重命名结果" },
 
     textDiff: { en: "Text Diff", zh: "文本对比" },
     textDiffDesc: { en: "Compare two texts line by line and highlight added and removed parts", zh: "逐行对比两段文本，高亮显示新增与删除的内容差异" },
@@ -349,9 +349,11 @@ const I18N = {
     toolResult: { en: "Result", zh: "结果" },
     outputFormat: { en: "Output format", zh: "输出格式" },
     convertBtn: { en: "Convert", zh: "转换" },
+    downloadZip: { en: "Download ZIP", zh: "打包 ZIP 下载" },
 
     /* ---------- Bulk rename ---------- */
-    fileLines: { en: "File names — one per line", zh: "文件名，每行一个" },
+    chooseFiles: { en: "Choose files", zh: "选择文件" },
+    dropFiles: { en: "or drag & drop them here", zh: "或将文件拖拽到这里" },
     prefix: { en: "Prefix", zh: "前缀" },
     suffix: { en: "Suffix", zh: "后缀" },
     startNum: { en: "Start number", zh: "起始序号" },
@@ -359,7 +361,12 @@ const I18N = {
     renameRule: { en: "Renaming rule", zh: "重命名规则" },
     newNames: { en: "New names", zh: "新文件名" },
     renamePreview: { en: "Preview", zh: "预览" },
-    inputEmpty: { en: "Enter at least one file name", zh: "请至少输入一个文件名" },
+    chooseFirst: { en: "Choose files first", zh: "请先选择文件" },
+    applyRule: { en: "Apply rule", zh: "应用规则" },
+    noFiles: { en: "Nothing to package — select files first", zh: "没有可打包的文件，请先选择文件" },
+    downloadRenamed: { en: "Download renamed (ZIP)", zh: "下载重命名结果（ZIP）" },
+    oldToNew: { en: "old → new · click a new name to edit", zh: "原名 → 新名 · 点击可编辑微调" },
+    renameHint: { en: "The ZIP download renames files only — contents are not converted", zh: "下载仅更改文件名，不转换文件内容" },
 };
 
 const storage = (() => {
@@ -387,7 +394,7 @@ function applyTheme(next) {
     const icon = document.getElementById("themeIcon");
     if (icon) {
         icon.innerHTML = theme === "dark"
-            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5.5"/><path d="M12 5V2.5M12 19V21.5M5 12H2.5M19 12H21.5M7.05 7.05 5.28 5.28M16.95 16.95 18.72 18.72M7.05 16.95 5.28 18.72M16.95 7.05 18.72 5.28"/></svg>'
+            ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/><path d="M12 2.8v2.6M12 18.6v2.6M2.8 12h2.6M18.6 12h2.6M7.33 7.33 5.5 5.5M16.67 7.33 18.5 5.5M16.67 16.67 18.5 18.5M7.33 16.67 5.5 18.5"/></svg>'
             : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path transform="translate(-1.171 -1.171) scale(1.0976)" d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/></svg>';
     }
 }

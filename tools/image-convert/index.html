@@ -16,8 +16,8 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 </script>
 <title>Image Convert · ToolBox</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
-<script src="../../core.js?v=20260919x"></script>
-<link rel="stylesheet" href="../../styles.css?v=20260919x">
+<script src="../../core.js?v=20260919z"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260919z">
 </head>
 <body>
 
@@ -55,7 +55,10 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 
     <div class="section">
         <div class="section-label" data-i18n="chooseImage">Choose an image</div>
-        <input type="file" id="file" accept="image/*,image/svg+xml" multiple class="code" style="font-size:16px;">
+        <div class="drop-zone" id="dropZone">
+            <input type="file" id="file" accept="image/*,image/svg+xml" multiple class="code" style="font-size:16px;">
+            <p class="drop-hint" data-i18n="dropImage">or drag &amp; drop it here</p>
+        </div>
         <p class="size-info" id="fileList" style="margin-top:10px;"></p>
 
         <div class="section-label" style="margin-top:18px;" data-i18n="outputFormat">Output format</div>
@@ -78,11 +81,12 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 
         <div class="btn-row">
             <button class="btn btn-primary" data-i18n="convertBtn" id="convert">Convert</button>
+            <button class="btn btn-secondary" data-i18n="downloadZip" id="downloadZip" hidden>Download ZIP</button>
         </div>
     </div>
 
     <div class="section" id="result" hidden>
-        <div class="section-label" data-i18n="toolResult">Result</div>
+        <div class="section-label"><span data-i18n="toolResult">Result</span><span class="hint" id="resultSummary"></span></div>
         <div id="resultGrid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:16px; margin-bottom:16px;"></div>
     </div>
 </main>
@@ -147,6 +151,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
     </div>
 </div>
 
-<script src="app.js?v=20260919x"></script>
+<script src="../../vendor/jszip.min.js?v=20260919z"></script>
+<script src="app.js?v=20260919z"></script>
 </body>
 </html>

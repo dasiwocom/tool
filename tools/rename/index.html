@@ -16,8 +16,8 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 </script>
 <title>Bulk Rename · ToolBox</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='5' width='22' height='22' rx='6' fill='%230071e3'/></svg>">
-<script src="../../core.js?v=20260919w"></script>
-<link rel="stylesheet" href="../../styles.css?v=20260919w">
+<script src="../../core.js?v=20260919z"></script>
+<link rel="stylesheet" href="../../styles.css?v=20260919z">
 </head>
 <body>
 
@@ -50,12 +50,26 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
 <main class="tool-page">
     <div class="tool-head" data-tool-key="rename">
         <h1>Bulk Rename</h1>
-        <p data-i18n="renameDesc">Rename files in batches with a rule</p>
+        <p data-i18n="renameDesc">Select files, apply a rule, and download the renamed copies</p>
     </div>
 
     <div class="section">
-        <div class="section-label" data-i18n="fileLines">File names — one per line</div>
-        <textarea class="code" id="lines" rows="6" spellcheck="false" placeholder="photo-001.jpg&#10;photo-002.jpg&#10;photo-003.jpg" style="font-size:16px;"></textarea>
+        <div class="section-label" data-i18n="chooseFiles">Choose files</div>
+        <div class="drop-zone" id="dropZone">
+            <input type="file" id="file" multiple class="code" style="font-size:16px;">
+            <p class="drop-hint" data-i18n="dropFiles">or drag &amp; drop them here</p>
+        </div>
+        <p class="size-info" id="fileList" style="margin-top:10px;"></p>
+    </div>
+
+    <div class="section" id="preview" hidden>
+        <div class="section-label"><span data-i18n="newNames">New names</span><span class="hint" data-i18n="oldToNew">old → new · click a new name to edit</span></div>
+        <div class="item-list" id="list"></div>
+        <div class="btn-row">
+            <button class="btn btn-secondary" data-i18n="copyAll" id="copyAll" hidden>Copy All</button>
+            <button class="btn btn-primary" data-i18n="downloadRenamed" id="downloadRenamed" hidden>Download renamed (ZIP)</button>
+        </div>
+        <p class="field-note" data-i18n="renameHint">The ZIP download renames files only — contents are not converted</p>
     </div>
 
     <div class="section">
@@ -63,7 +77,8 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
         <div class="range-row">
             <select id="rule" class="code">
                 <option value="affix">prefix + name + suffix</option>
-                <option value="sequential">prefix + number + suffix (.ext kept)</option>
+                <option value="sequential">prefix + number + suffix</option>
+                <option value="concat">prefix + suffix</option>
             </select>
         </div>
 
@@ -78,7 +93,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
             </div>
         </div>
 
-        <div class="input-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
+        <div class="input-grid" id="numRow" style="display:none; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
             <div>
                 <span class="hint" data-i18n="startNum">Start number</span>
                 <input id="start" type="number" min="0" value="1" class="code">
@@ -90,15 +105,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
         </div>
 
         <div class="btn-row">
-            <button class="btn btn-primary" data-i18n="generate" id="generate">Generate</button>
-        </div>
-    </div>
-
-    <div class="section" id="result" hidden>
-        <div class="section-label"><span data-i18n="newNames">New names</span><span class="hint" data-i18n="clickToCopy">Click to copy</span></div>
-        <div class="item-list" id="list"></div>
-        <div class="btn-row">
-            <button class="btn btn-secondary" data-i18n="copyAll" id="copyAll">Copy All</button>
+            <button class="btn btn-primary" data-i18n="applyRule" id="generate">Apply rule</button>
         </div>
     </div>
 </main>
@@ -163,6 +170,7 @@ setTimeout(function(){try{document.documentElement.classList.remove("i18n-pendin
     </div>
 </div>
 
-<script src="app.js?v=20260919w"></script>
+<script src="../../vendor/jszip.min.js?v=20260919z"></script>
+<script src="app.js?v=20260919z"></script>
 </body>
 </html>

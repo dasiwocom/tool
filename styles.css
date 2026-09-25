@@ -12,8 +12,8 @@
     --radius-lg: 22px;
     --ease: cubic-bezier(0.4, 0, 0.2, 1);
     --theme-dur: 0s;      /* theme switch is insta-snapshot: fully in-frame */
-    --build: "20260919w"; /* visible build marker — bump on every deploy */
-    --badge-text: "v20260919w"; /* keep in sync with --build */
+    --build: "20260919z"; /* visible build marker — bump on every deploy */
+    --badge-text: "v20260919z"; /* keep in sync with --build */
 }
 
 [data-theme="light"] {
@@ -204,7 +204,7 @@ button {
 
 /* sun/moon glyph is delicate and reads thinner than the globe's ring at 1.8;
    bump so the strokes match the side icons visually. */
-#themeIcon svg { stroke-width: 2.2; }
+#themeIcon svg { stroke-width: 2; }
 
 /* ==========================================================
    Hero (home)
@@ -378,6 +378,27 @@ button {
 
 .section {
     margin-bottom: 28px;
+}
+
+/* Drag & drop upload zone (image tools) */
+.drop-zone {
+    border: 1.5px dashed var(--hairline);
+    border-radius: var(--radius);
+    padding: 22px 18px;
+    text-align: center;
+    transition: border-color var(--theme-dur) var(--ease), background-color var(--theme-dur) var(--ease);
+    cursor: pointer;
+}
+
+.drop-zone.dragover {
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+.drop-zone .drop-hint {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
 }
 
 .prose {
@@ -641,6 +662,35 @@ input.output { font-family: var(--mono); font-size: 13px; }
     color: var(--text-muted);
     flex-shrink: 0;
     min-width: 22px;
+}
+
+.item-list .row .old-name {
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 34%;
+    flex-shrink: 1;
+}
+.item-list .row .arrow {
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+.item-list .row .new-name {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+    border: 1px solid var(--hairline);
+    border-radius: 7px;
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12.5px;
+    padding: 6px 8px;
+    outline: none;
+}
+.item-list .row .new-name:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .stat-grid {

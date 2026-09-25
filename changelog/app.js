@@ -1,9 +1,30 @@
 /* Timeline — chronological (latest first) */
 const VERSIONS = [
     {
+        v: "1.6",
+        date: "2026-09-23",
+        latest: true,
+        title: {
+            en: "Bulk Rename can now take real files",
+            zh: "批量重命名支持选择文件了"
+        },
+        items: {
+            en: [
+                "Bulk Rename: choose or drag & drop your files — real file names fill in automatically",
+                "The old → new list is editable — tweak individual names in place for special cases",
+                "Download every renamed file as a ZIP — everything still runs locally in your browser"
+            ],
+            zh: [
+                "批量重命名：支持选择或拖拽文件，真实文件名自动填入",
+                "「原名 → 新名」对照栏内置编辑框，可逐个微调特殊文件的新名字",
+                "一键打包下载全部重命名结果（ZIP），始终在浏览器本地处理"
+            ]
+        }
+    },
+    {
         v: "1.5",
         date: "2026-09-19",
-        latest: true,
+        latest: false,
         title: {
             en: "Document tools · PDF to Word, Word to PDF, PDF to Image, HTML to Markdown",
             zh: "文档工具 · PDF 转 Word、Word 转 PDF、PDF 转图片、HTML 转 Markdown"
